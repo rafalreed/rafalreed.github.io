@@ -15,14 +15,14 @@ title = "Rafal Reed"
   # copyright = "Copy, _right?_ :thinking_face:"
 
 # [params.author]
-#   name = "Rafal Reed"
-#   email = "rafal.reed@hotmail.com"
+name = "Rafal Reed"
+email = "rafal.reed@hotmail.com"
 #   image = "img/blowfish_logo.png"
 #   imageQuality = 96
-#   headline = "Power Platform & Microsoft 365 Engineer"
-#   bio = "A little bit about you"
-#   links = [
-#     { email = "mailto:hello@your_domain.com" },
+headline = "Power Platform & Microsoft 365 Engineer"
+bio = "Building governed automation, applications and Microsoft 365 solutions that solve real operational problems."
+links = [
+      { email = "mailto:rafal.reed@hotmail.com" },
 #     { link = "https://link-to-some-website.com/" },
 #     { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
 #     { apple = "https://www.apple.com" },
@@ -35,7 +35,7 @@ title = "Rafal Reed"
 #     { facebook = "https://facebook.com/username" },
 #     { flickr = "https://www.flickr.com/photos/username/" },
 #     { foursquare = "https://foursquare.com/username" },
-#     { github = "https://github.com/username" },
+      { github = "https://github.com/rafalreed" },
 #     { github_gist = "https://gist.github.com/username" },
 #     { gitlab = "https://gitlab.com/username" },
 #     { google = "https://www.google.com/" },
@@ -46,7 +46,7 @@ title = "Rafal Reed"
 #     { keyoxide = "https://keyoxide.org/URI" },
 #     { kickstarter = "https://www.kickstarter.com/profile/username" },
 #     { lastfm = "https://lastfm.com/user/username" },
-#     { linkedin = "https://linkedin.com/in/username" },
+      { linkedin = "https://www.linkedin.com/in/rafal-reed-1738b91b4" },
 #     { mastodon = "https://mastodon.instance/@username" },
 #     { matrix = "https://matrix.to/#/URI" },
 #     { medium = "https://medium.com/username" },
@@ -77,4 +77,4 @@ title = "Rafal Reed"
 #     { ko-fi = "https://ko-fi.com/username" },
 #     { codeberg = "https://codeberg.org/username"},
 #     { printables = "https://www.printables.com/@username"},
-#   ]
+   ]
