@@ -15,6 +15,24 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:1313/guides/fixing-adaptive-card-payload-limit/</loc>
+    <lastmod>2026-09-21T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/guides/</loc>
+    <lastmod>2026-09-21T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/guides/handling-pagination-graph-powerautomate/</loc>
+    <lastmod>2026-09-21T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/</loc>
     <lastmod>2026-09-21T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -35,11 +53,6 @@
   <url>
     <loc>http://localhost:1313/projects/teams-telephony-automation/</loc>
     <lastmod>2026-09-21T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/guides/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

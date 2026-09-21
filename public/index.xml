@@ -32,6 +32,16 @@
     </item>
     
     <item>
+      <title>Fixing Teams Adaptive Card Payload Limit Errors in Power Automate</title>
+      <link>http://localhost:1313/guides/fixing-adaptive-card-payload-limit/</link>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/guides/fixing-adaptive-card-payload-limit/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Handling Pagination When Calling Microsoft Graph from Power Automate</title>
       <link>http://localhost:1313/guides/handling-pagination-graph-powerautomate/</link>
       <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>

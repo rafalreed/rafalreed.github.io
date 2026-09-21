@@ -4,6 +4,8 @@ title: "Automated Inactive Account Lifecycle Management"
 date: 2026-09-21
 description: "An automated Microsoft Entra ID lifecycle process for identifying inactive accounts, managing staged warnings and safely progressing accounts towards removal."
 summary: "Automating inactive-account governance using Microsoft Graph, Power Automate and structured lifecycle tracking."
+showHero: true
+heroStyle: "big"
 tags:
 
 - Microsoft Entra ID

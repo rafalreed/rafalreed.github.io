@@ -1,0 +1,1892 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title>Fixing Teams Adaptive Card Payload Limit Errors in Power Automate &middot; Rafal Reed</title>
+    <meta name="title" content="Fixing Teams Adaptive Card Payload Limit Errors in Power Automate &middot; Rafal Reed">
+  
+
+  
+  
+  
+  
+  
+    
+  
+    
+  
+    
+  
+  
+  
+    <meta name="keywords" content="Power Automate,">
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/guides/fixing-adaptive-card-payload-limit/">
+  
+  
+
+  
+  
+    <meta name="author" content="Rafal Reed">
+  
+  
+    
+      
+        
+          <link href="https://github.com/rafalreed" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://www.linkedin.com/in/rafal-reed-1738b91b4" rel="me">
+        
+      
+    
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/guides/fixing-adaptive-card-payload-limit/">
+	<meta property="og:site_name" content="Rafal Reed">
+	<meta property="og:title" content="Fixing Teams Adaptive Card Payload Limit Errors in Power Automate">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="guides">
+		<meta property="article:published_time" content="2026-09-21T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-09-21T00:00:00+00:00">
+		<meta property="article:tag" content="Power Automate">
+
+  
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Fixing Teams Adaptive Card Payload Limit Errors in Power Automate">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.163b1a537d7d19ec16c2ebb45902386b6e2b94c9b4b5f8c82958e5baed6fd863aed36a5f5bbf3c614a6e9025b13c5b7e03513e563e022249501dcadb5cbbd13c.css"
+    integrity="sha512-FjsaU319GewWwuu0WQI4a24rlMm0tfjIKVjluu1v2GOu02pfW788YUpukCWxPFt&#43;A1E&#43;Vj4CIklQHcrbXLvRPA==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.764f412f07ea715415e9123a5eb5f355429502d0b760146b9bcab854bc50829dee14488594acd935dfcdc6a0fe7e6d14d7bee914ebb9272b251aa238cb52c4dd.js"
+    integrity="sha512-dk9BLwfqcVQV6RI6XrXzVUKVAtC3YBRrm8q4VLxQgp3uFEiFlKzZNd/NxqD&#43;fm0U177pFOu5JyslGqI4y1LE3Q=="></script>
+  
+
+
+  
+  
+  
+  
+  
+  
+    
+    <script defer src="/lib/zoom/zoom.min.umd.b4b722fcb5d42f34f52b30a92f3521b69f403ca9d96d0d6179eb537cb870f5d83fdf1fe836688d95d5c99fefbda4170487711006e56051fa67ea00da10521721.js" integrity="sha512-tLci/LXULzT1KzCpLzUhtp9APKnZbQ1heetTfLhw9dg/3x/oNmiNldXJn&#43;&#43;9pBcEh3EQBuVgUfpn6gDaEFIXIQ=="></script>
+    
+    <script defer src="/js/medium-zoom.7f76d937fbb793f3703fedc60ee1e6345259cf2ada403d1876b806fffeaeb2ba6fc594eaccad75c96d5d2425e9fb833748bf1221b4d90d3cf78cf073e104f814.js" integrity="sha512-f3bZN/u3k/NwP&#43;3GDuHmNFJZzyraQD0YdrgG//6usrpvxZTqzK11yW1dJCXp&#43;4M3SL8SIbTZDTz3jPBz4QT4FA=="></script>
+  
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.741242ef934dc59264f0354960792bb06fa5fdef01a762e81f6aaac0a68a8212fa27788ea81bcd0a1ea9bd62386a81012b4ba68043b2b6dfcb57b1b03845078d.js"
+      integrity="sha512-dBJC75NNxZJk8DVJYHkrsG&#43;l/e8Bp2LoH2qqwKaKghL6J3iOqBvNCh6pvWI4aoEBK0umgEOytt/LV7GwOEUHjQ=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Guides",
+    "name": "Fixing Teams Adaptive Card Payload Limit Errors in Power Automate",
+    "headline": "Fixing Teams Adaptive Card Payload Limit Errors in Power Automate",
+    
+    "inLanguage": "en",
+    "url" : "http://localhost:1313/guides/fixing-adaptive-card-payload-limit/",
+    "author" : {
+      "@type": "Person",
+      "name": "Rafal Reed",
+      "sameAs": ["https://github.com/rafalreed", "https://www.linkedin.com/in/rafal-reed-1738b91b4"]
+    },
+    "copyrightYear": "2026",
+    "dateCreated": "2026-09-21T00:00:00\u002b00:00",
+    "datePublished": "2026-09-21T00:00:00\u002b00:00",
+    
+    "dateModified": "2026-09-21T00:00:00\u002b00:00",
+    
+    "keywords": ["Power Automate"],
+    
+    "mainEntityOfPage": "http://localhost:1313/guides/fixing-adaptive-card-payload-limit/",
+    "wordCount":  2887 
+  }]
+  </script>
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral bf-scrollbar">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    <header>
+      
+      
+        <div class="main-menu flex items-center w-full gap-2 p-1 pl-0">
+  
+  
+    <a href="/" class="text-base font-medium truncate min-w-0 shrink">
+      Rafal Reed
+    </a>
+  
+  <div class="flex items-center ms-auto">
+    <div class="hidden md:flex">
+      <nav aria-label="Main menu" class="flex items-center gap-x-5 h-12">
+  
+    
+      
+  
+    <a
+      href="/projects/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="Projects"
+      title="Projects">
+      
+      
+        <span class="text-sm font-medium break-normal">
+          Projects
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/guides/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="Guides"
+      title="Guides">
+      
+      
+        <span class="text-sm font-medium break-normal">
+          Guides
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/about/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="About"
+      title="About">
+      
+      
+        <span class="text-sm font-medium break-normal">
+          About
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="https://github.com/rafalreed"
+      
+        target="_blank"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="github"
+      title="">
+      
+        <span >
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+        </span>
+      
+      
+    </a>
+  
+
+    
+  
+
+  
+
+  
+
+  
+    <div class="flex items-center">
+      <button
+        id="appearance-switcher"
+        aria-label="Switch to dark appearance"
+        type="button"
+        class="text-sm bf-icon-color-hover"
+        title="Switch to dark appearance">
+        <div class="flex items-center justify-center dark:hidden">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+        </div>
+      </button>
+    </div>
+  
+
+  
+    <button
+      id="search-button"
+      aria-label="Search (/ or ⌘K)"
+      class="flex items-center gap-2 rounded-lg border bf-border-color bf-border-color-hover bg-neutral-100/50 px-2 py-1 text-sm text-neutral-500 transition-colors hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral-400 dark:hover:text-primary-400"
+      title="Search (/ or ⌘K)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      <kbd
+        id="search-shortcut-hint"
+        class="pointer-events-none font-sans text-xs text-neutral-500 dark:text-neutral-400"
+        aria-hidden="true">
+        ⌘K
+      </kbd>
+    </button>
+  
+</nav>
+
+
+
+    </div>
+    <div class="flex md:hidden">
+      
+<div class="mobile-header-row relative flex items-center h-14 gap-4">
+  
+
+  
+    <button
+      id="appearance-switcher-mobile"
+      type="button"
+      aria-label="Switch to dark appearance"
+      title="Switch to dark appearance"
+      class="flex items-center justify-center text-neutral-900 hover:text-primary-600 dark:text-neutral-200 dark:hover:text-primary-400">
+      <div class="dark:hidden">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+      </div>
+      <div class="hidden dark:block">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+      </div>
+    </button>
+  
+
+  
+    <button
+      id="search-button-mobile"
+      aria-label="Search (/ or ⌘K)"
+      class="flex items-center justify-center bf-icon-color-hover"
+      title="Search (/ or ⌘K)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+    </button>
+  
+
+  
+    <input type="checkbox" id="mobile-menu-toggle" autocomplete="off" class="hidden peer">
+    <label
+      for="mobile-menu-toggle"
+      tabindex="0"
+      role="button"
+      aria-expanded="false"
+      aria-controls="mobile-menu-dialog"
+      aria-label="Main menu"
+      class="flex items-center justify-center cursor-pointer bf-icon-color-hover">
+      <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+    </label>
+
+    <div
+      id="mobile-menu-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Main menu"
+      style="scrollbar-gutter: stable;"
+      class="z-50 invisible overflow-y-auto opacity-0 transition-[opacity,visibility] duration-300 peer-checked:visible peer-checked:opacity-100
+      
+        fixed inset-0 px-6 py-20 bg-neutral-50/97 dark:bg-neutral-900/99
+      
+      bf-scrollbar">
+      <label
+        for="mobile-menu-toggle"
+        tabindex="0"
+        role="button"
+        aria-expanded="false"
+        aria-controls="mobile-menu-dialog"
+        class="fixed end-8 top-5 z-50 h-12 w-12 rounded-full flex items-center justify-center cursor-pointer select-none bf-icon-color-hover border bf-border-color bf-border-color-hover bg-neutral-50 dark:bg-neutral-900">
+        <span class="sr-only">Close menu</span>
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </label>
+      <nav
+        aria-label="Mobile menu"
+        class="mx-auto max-w-md space-y-6">
+        
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="/projects/"
+          aria-label="Projects"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+          <span title="Projects" class="text-2xl font-bold tracking-tight">
+            Projects
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="/guides/"
+          aria-label="Guides"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+          <span title="Guides" class="text-2xl font-bold tracking-tight">
+            Guides
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="/about/"
+          aria-label="About"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+          <span title="About" class="text-2xl font-bold tracking-tight">
+            About
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="https://github.com/rafalreed"
+          aria-label="github"
+          
+            target="_blank"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+            <span class="flex items-center justify-center h-8 w-8 text-2xl">
+              <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+            </span>
+          
+          <span title="" class="text-2xl font-bold tracking-tight">
+            
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+
+        
+  
+
+        
+  
+
+      </nav>
+    </div>
+  
+</div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+      
+    </header>
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  
+  
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Fixing Teams Adaptive Card Payload Limit Errors in Power Automate
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2026-09-21T00:00:00&#43;00:00">21 September 2026</time><span class="px-2 text-primary-500">&middot;</span><span>2887 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    
+      
+      
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        Author
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        Rafal Reed
+      </div>
+    
+    
+      <div class="text-sm text-neutral-700 dark:text-neutral-400">Building governed automation, applications and Microsoft 365 solutions that solve real operational problems.</div>
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500 space-x-2">
+    
+      
+        
+        <a
+          class=" hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/rafalreed"
+          
+          target="_blank"
+          aria-label="Github"
+          title="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span></span></a
+        >
+      
+    
+      
+        
+        <a
+          class=" hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://www.linkedin.com/in/rafal-reed-1738b91b4"
+          
+          target="_blank"
+          aria-label="Linkedin"
+          title="Linkedin"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+</span></span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+    
+  
+
+  
+    <div class="mb-5"></div>
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          <p>Adaptive Cards are a useful way of turning Power Automate notifications into structured Microsoft Teams messages.</p>
+<p>They work particularly well for things such as:</p>
+<ul>
+<li>application credential expiry alerts;</li>
+<li>service health notifications;</li>
+<li>approval summaries;</li>
+<li>licence reports;</li>
+<li>security alerts;</li>
+<li>operational dashboards.</li>
+</ul>
+<p>However, there is an easy problem to encounter when a card is generated dynamically:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">The payload is too large.
+</span></span><span class="line"><span class="cl">Please make sure the size is less than 28KB.</span></span></code></pre></div></div>
+<p>or:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Request Entity too large</span></span></code></pre></div></div>
+<p>The flow itself may be working correctly. The problem is simply that the message being sent to Teams has grown beyond the size supported by the connector.</p>
+<p>This guide explains how I troubleshoot these errors and, more importantly, how I design Adaptive Card notifications so they do not become increasingly fragile as the amount of data grows.</p>
+<hr>
+
+<h1 class="relative group">The problem
+    <div id="the-problem" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#the-problem" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Consider a Power Automate flow that checks Azure application credentials which are approaching expiration.</p>
+<p>The flow might:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Get applications
+</span></span><span class="line"><span class="cl">      ↓
+</span></span><span class="line"><span class="cl">Check credential expiry dates
+</span></span><span class="line"><span class="cl">      ↓
+</span></span><span class="line"><span class="cl">Filter credentials expiring soon
+</span></span><span class="line"><span class="cl">      ↓
+</span></span><span class="line"><span class="cl">Build Adaptive Card rows
+</span></span><span class="line"><span class="cl">      ↓
+</span></span><span class="line"><span class="cl">Post card to Teams</span></span></code></pre></div></div>
+<p>With only a few applications, everything works correctly.</p>
+<p>As more results are returned, however, the Adaptive Card becomes larger.</p>
+<p>Eventually the Teams action fails with:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">The payload is too large.
+</span></span><span class="line"><span class="cl">Please make sure the size is less than 28KB.</span></span></code></pre></div></div>
+<p>Microsoft documents an approximate <strong>28 KB message-size limit</strong> for relevant Microsoft Teams connector posting actions.</p>
+<p>The important word here is <strong>payload</strong>.</p>
+<p>It is not simply the amount of text visible to the user.</p>
+<p>The JSON required to construct the card contributes to the message as well.</p>
+<hr>
+
+<h1 class="relative group">Why an Adaptive Card becomes large so quickly
+    <div id="why-an-adaptive-card-becomes-large-so-quickly" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#why-an-adaptive-card-becomes-large-so-quickly" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>A card containing ten short rows may look tiny when rendered in Teams.</p>
+<p>The JSON behind it can be considerably larger.</p>
+<p>For example, a single visual row might look something like this:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;ColumnSet&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;columns&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Column&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;width&#34;</span><span class="p">:</span> <span class="s2">&#34;stretch&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;items&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;TextBlock&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;text&#34;</span><span class="p">:</span> <span class="s2">&#34;Example Application&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;wrap&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Column&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;width&#34;</span><span class="p">:</span> <span class="s2">&#34;auto&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;items&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;TextBlock&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;text&#34;</span><span class="p">:</span> <span class="s2">&#34;18 days&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;wrap&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;weight&#34;</span><span class="p">:</span> <span class="s2">&#34;Bolder&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p>What the user sees is effectively:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Example Application        18 days</span></span></code></pre></div></div>
+<p>But Power Automate has to send the entire JSON structure.</p>
+<p>Now repeat that structure 20, 30 or 50 times.</p>
+<p>This is why cards containing repeated <code>ColumnSet</code>, <code>Container</code>, <code>TextBlock</code> and formatting properties can reach the payload limit surprisingly quickly.</p>
+<hr>
+
+<h1 class="relative group">First: confirm that size is actually the problem
+    <div id="first-confirm-that-size-is-actually-the-problem" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#first-confirm-that-size-is-actually-the-problem" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Before redesigning the flow, I check the failed Teams action.</p>
+<p>Open:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Flow
+</span></span><span class="line"><span class="cl">  → Run history
+</span></span><span class="line"><span class="cl">  → Failed run
+</span></span><span class="line"><span class="cl">  → Post card in a chat or channel</span></span></code></pre></div></div>
+<p>Then inspect the error.</p>
+<p>If it contains something similar to:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">The payload is too large</span></span></code></pre></div></div>
+<p>or:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Request Entity too large</span></span></code></pre></div></div>
+<p>the issue is different from problems such as:</p>
+<ul>
+<li>malformed JSON;</li>
+<li>unsupported Adaptive Card schema versions;</li>
+<li>invalid image URLs;</li>
+<li>missing properties;</li>
+<li>authentication failures;</li>
+<li>Teams connector throttling.</li>
+</ul>
+<p>Microsoft also recommends validating Adaptive Card JSON when troubleshooting card failures, as malformed JSON is another common source of errors.</p>
+<hr>
+
+<h1 class="relative group">Inspect the generated card before posting it
+    <div id="inspect-the-generated-card-before-posting-it" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#inspect-the-generated-card-before-posting-it" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>If the Adaptive Card is generated dynamically, I usually add a <strong>Compose</strong> action immediately before the Teams action.</p>
+<p>For example:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Compose – Final Adaptive Card</span></span></code></pre></div></div>
+<p>Its input contains exactly what will be passed into:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Post card in a chat or channel</span></span></code></pre></div></div>
+<p>This gives me a much easier way of inspecting the completed JSON.</p>
+<p>The flow becomes:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Build card
+</span></span><span class="line"><span class="cl">     ↓
+</span></span><span class="line"><span class="cl">Compose – Final Adaptive Card
+</span></span><span class="line"><span class="cl">     ↓
+</span></span><span class="line"><span class="cl">Post card in Teams</span></span></code></pre></div></div>
+<p>I can then open the flow run and inspect the output of the Compose action.</p>
+<p>This is particularly useful when the card is assembled using several variables, Select actions or Append to array variable actions.</p>
+<hr>
+
+<h1 class="relative group">Using <code>length()</code> as an early warning
+    <div id="using-length-as-an-early-warning" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#using-length-as-an-early-warning" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Power Automate&rsquo;s <code>length()</code> expression can give a useful indication of whether the card is becoming unusually large.</p>
+<p>For example:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">length(
+</span></span><span class="line"><span class="cl">    string(outputs(&#39;Compose_-_Final_Adaptive_Card&#39;))
+</span></span><span class="line"><span class="cl">)</span></span></code></pre></div></div>
+<p>This returns the number of characters in the generated string.</p>
+<p>It is important to understand that:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">characters ≠ bytes</span></span></code></pre></div></div>
+<p>Characters containing Unicode data can require more than one byte when encoded.</p>
+<p>Therefore I would not use this expression as an exact measurement of the Teams limit.</p>
+<p>It is still useful as a troubleshooting metric.</p>
+<p>For example, I might temporarily add:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Compose – Card Character Count</span></span></code></pre></div></div>
+<p>with:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">length(
+</span></span><span class="line"><span class="cl">    string(outputs(&#39;Compose_-_Final_Adaptive_Card&#39;))
+</span></span><span class="line"><span class="cl">)</span></span></code></pre></div></div>
+<p>If the number increases dramatically with the number of returned records, I have a strong indication of where the problem is coming from.</p>
+<hr>
+
+<h1 class="relative group">Fix 1 - Do not put the complete report in Teams
+    <div id="fix-1---do-not-put-the-complete-report-in-teams" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#fix-1---do-not-put-the-complete-report-in-teams" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>This is usually the most important change.</p>
+<p>An Adaptive Card should generally be treated as a <strong>notification or summary</strong>, not as a replacement for a reporting system.</p>
+<p>Instead of displaying:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">47 applications
+</span></span><span class="line"><span class="cl">47 application IDs
+</span></span><span class="line"><span class="cl">47 expiry dates
+</span></span><span class="line"><span class="cl">47 owners
+</span></span><span class="line"><span class="cl">47 credential types
+</span></span><span class="line"><span class="cl">47 links</span></span></code></pre></div></div>
+<p>I might display:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Application Credential Expiry Alert
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">3 credentials expire within 7 days
+</span></span><span class="line"><span class="cl">8 credentials expire within 30 days
+</span></span><span class="line"><span class="cl">36 additional credentials require review
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Highest priority:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Application A             2 days
+</span></span><span class="line"><span class="cl">Application B             4 days
+</span></span><span class="line"><span class="cl">Application C             6 days
+</span></span><span class="line"><span class="cl">Application D             8 days
+</span></span><span class="line"><span class="cl">Application E            10 days
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[View full report]</span></span></code></pre></div></div>
+<p>The complete dataset could live in:</p>
+<ul>
+<li>SharePoint;</li>
+<li>Dataverse;</li>
+<li>Power BI;</li>
+<li>an internal web application;</li>
+<li>another reporting location.</li>
+</ul>
+<p>The card then becomes an entry point into the report rather than the report itself.</p>
+<p>This pattern scales much better.</p>
+<hr>
+
+<h1 class="relative group">Fix 2 - Limit the number of records displayed
+    <div id="fix-2---limit-the-number-of-records-displayed" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#fix-2---limit-the-number-of-records-displayed" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Power Automate&rsquo;s <code>take()</code> expression is particularly useful here.</p>
+<p>Suppose an array contains all applications approaching expiration:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">variables(&#39;varExpiringCredentials&#39;)</span></span></code></pre></div></div>
+<p>Instead of placing every result in the card:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">variables(&#39;varExpiringCredentials&#39;)</span></span></code></pre></div></div>
+<p>I can use:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">take(
+</span></span><span class="line"><span class="cl">    variables(&#39;varExpiringCredentials&#39;),
+</span></span><span class="line"><span class="cl">    10
+</span></span><span class="line"><span class="cl">)</span></span></code></pre></div></div>
+<p>The card will display only the first ten results.</p>
+<p>I can then show the total separately:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">length(
+</span></span><span class="line"><span class="cl">    variables(&#39;varExpiringCredentials&#39;)
+</span></span><span class="line"><span class="cl">)</span></span></code></pre></div></div>
+<p>This allows the notification to say something like:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">24 credentials require attention.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Showing the 10 most urgent.</span></span></code></pre></div></div>
+<p>This is considerably more useful than allowing the entire notification to fail because there were too many results.</p>
+<hr>
+
+<h1 class="relative group">Sort before using <code>take()</code>
+    <div id="sort-before-using-take" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#sort-before-using-take" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>If I am going to limit the card to ten results, I also want to make sure they are the <strong>most important ten</strong>.</p>
+<p>For an expiry notification, that normally means sorting the dataset so that credentials expiring soonest appear first.</p>
+<p>Conceptually:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">All expiring credentials
+</span></span><span class="line"><span class="cl">        ↓
+</span></span><span class="line"><span class="cl">Sort by DaysRemaining
+</span></span><span class="line"><span class="cl">        ↓
+</span></span><span class="line"><span class="cl">Take first 10
+</span></span><span class="line"><span class="cl">        ↓
+</span></span><span class="line"><span class="cl">Build Adaptive Card</span></span></code></pre></div></div>
+<p>The Teams notification therefore contains the records requiring the most immediate attention.</p>
+<p>The full dataset can still be stored elsewhere.</p>
+<hr>
+
+<h1 class="relative group">Fix 3 - Simplify repeated card JSON
+    <div id="fix-3---simplify-repeated-card-json" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#fix-3---simplify-repeated-card-json" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Sometimes the underlying problem is not the amount of data but the way each row is constructed.</p>
+<p>Consider a card containing heavily formatted rows with:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Container
+</span></span><span class="line"><span class="cl">  └─ ColumnSet
+</span></span><span class="line"><span class="cl">      ├─ Column
+</span></span><span class="line"><span class="cl">      │   └─ TextBlock
+</span></span><span class="line"><span class="cl">      ├─ Column
+</span></span><span class="line"><span class="cl">      │   └─ TextBlock
+</span></span><span class="line"><span class="cl">      └─ Column
+</span></span><span class="line"><span class="cl">          └─ TextBlock</span></span></code></pre></div></div>
+<p>If this structure is repeated 30 times, a large proportion of the payload consists of formatting instructions rather than useful data.</p>
+<p>Where possible, I remove unnecessary properties such as repeated:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;spacing&#34;</span><span class="err">:</span> <span class="s2">&#34;None&#34;</span></span></span></code></pre></div></div>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;wrap&#34;</span><span class="err">:</span> <span class="kc">true</span></span></span></code></pre></div></div>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;horizontalAlignment&#34;</span><span class="err">:</span> <span class="s2">&#34;Left&#34;</span></span></span></code></pre></div></div>
+<p>or unnecessary nested containers.</p>
+<p>I do not remove properties that are required for the desired layout, but it is worth reviewing whether every generated row really needs several nested Adaptive Card objects.</p>
+<hr>
+
+<h1 class="relative group">Fix 4 - Combine values
+    <div id="fix-4---combine-values" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#fix-4---combine-values" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Another useful technique is combining related fields.</p>
+<p>For example, instead of displaying:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Application Name | Application ID | Expiry</span></span></code></pre></div></div>
+<p>as three separate columns, I could display:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Application Name
+</span></span><span class="line"><span class="cl">Application ID</span></span></code></pre></div></div>
+<p>inside one element and keep only the expiry period as the second column.</p>
+<p>Even better, where appropriate, the application name could link directly to the management page.</p>
+<p>This gives users the same useful information while reducing the number of card components.</p>
+<hr>
+
+<h1 class="relative group">Fix 5 - Remove data users do not need
+    <div id="fix-5---remove-data-users-do-not-need" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#fix-5---remove-data-users-do-not-need" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>An operational notification can easily become overloaded.</p>
+<p>For example, the automation may know:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Application name
+</span></span><span class="line"><span class="cl">Object ID
+</span></span><span class="line"><span class="cl">Application ID
+</span></span><span class="line"><span class="cl">Credential ID
+</span></span><span class="line"><span class="cl">Credential type
+</span></span><span class="line"><span class="cl">Created date
+</span></span><span class="line"><span class="cl">Expiry date
+</span></span><span class="line"><span class="cl">Days remaining
+</span></span><span class="line"><span class="cl">Owner
+</span></span><span class="line"><span class="cl">Owner UPN
+</span></span><span class="line"><span class="cl">Owner object ID
+</span></span><span class="line"><span class="cl">Environment
+</span></span><span class="line"><span class="cl">Status</span></span></code></pre></div></div>
+<p>That does not mean every field needs to appear in Teams.</p>
+<p>I normally ask:</p>
+<blockquote><p>What information does someone actually need to decide whether they need to act?</p>
+</blockquote><p>For an expiry notification that may only be:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Application
+</span></span><span class="line"><span class="cl">Credential type
+</span></span><span class="line"><span class="cl">Expiry date
+</span></span><span class="line"><span class="cl">Days remaining
+</span></span><span class="line"><span class="cl">Owner</span></span></code></pre></div></div>
+<p>Everything else can remain in the underlying report.</p>
+<hr>
+
+<h1 class="relative group">Fix 6 - Be careful with long URLs
+    <div id="fix-6---be-careful-with-long-urls" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#fix-6---be-careful-with-long-urls" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>URLs are also part of the card payload.</p>
+<p>A card containing many long links can therefore become surprisingly large.</p>
+<p>Instead of displaying URLs as text:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/...</span></span></code></pre></div></div>
+<p>use a short label such as:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">View application</span></span></code></pre></div></div>
+<p>with the URL stored in the Adaptive Card action.</p>
+<p>This improves both readability and card size.</p>
+<p>It does not eliminate the URL from the payload, but it prevents the same long URL from also being presented as unnecessary visible text.</p>
+<hr>
+
+<h1 class="relative group">Fix 7 - Split results across multiple cards
+    <div id="fix-7---split-results-across-multiple-cards" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#fix-7---split-results-across-multiple-cards" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>If users genuinely need every record directly in Teams, another option is to split the data into smaller batches.</p>
+<p>For example:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Results: 36
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Card 1 → records 1–10
+</span></span><span class="line"><span class="cl">Card 2 → records 11–20
+</span></span><span class="line"><span class="cl">Card 3 → records 21–30
+</span></span><span class="line"><span class="cl">Card 4 → records 31–36</span></span></code></pre></div></div>
+<p>Power Automate provides useful expressions for this:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">take()</span></span></code></pre></div></div>
+<p>and:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">skip()</span></span></code></pre></div></div>
+<p>For example:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">take(
+</span></span><span class="line"><span class="cl">    skip(
+</span></span><span class="line"><span class="cl">        variables(&#39;varResults&#39;),
+</span></span><span class="line"><span class="cl">        variables(&#39;varOffset&#39;)
+</span></span><span class="line"><span class="cl">    ),
+</span></span><span class="line"><span class="cl">    variables(&#39;varBatchSize&#39;)
+</span></span><span class="line"><span class="cl">)</span></span></code></pre></div></div>
+<p>With:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">varOffset = 0
+</span></span><span class="line"><span class="cl">varBatchSize = 10</span></span></code></pre></div></div>
+<p>the first iteration returns:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">0–9</span></span></code></pre></div></div>
+<p>After increasing the offset to:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">10</span></span></code></pre></div></div>
+<p>the next iteration returns:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">10–19</span></span></code></pre></div></div>
+<p>and so on.</p>
+<hr>
+
+<h1 class="relative group">But splitting cards should not be the first solution
+    <div id="but-splitting-cards-should-not-be-the-first-solution" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#but-splitting-cards-should-not-be-the-first-solution" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Technically, sending six cards instead of one may solve the payload-size problem.</p>
+<p>From a user experience perspective, however, this:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Alert
+</span></span><span class="line"><span class="cl">Alert
+</span></span><span class="line"><span class="cl">Alert
+</span></span><span class="line"><span class="cl">Alert
+</span></span><span class="line"><span class="cl">Alert
+</span></span><span class="line"><span class="cl">Alert</span></span></code></pre></div></div>
+<p>may not be particularly useful.</p>
+<p>It also increases the number of calls being made to the Teams connector and can introduce additional considerations around throttling.</p>
+<p>I therefore prefer:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">One concise Teams notification
+</span></span><span class="line"><span class="cl">              +
+</span></span><span class="line"><span class="cl">      Full external report</span></span></code></pre></div></div>
+<p>unless there is a genuine requirement for all records to be displayed directly in Teams.</p>
+<hr>
+
+<h1 class="relative group">Fix 8 - Add a maximum number of displayed records
+    <div id="fix-8---add-a-maximum-number-of-displayed-records" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#fix-8---add-a-maximum-number-of-displayed-records" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>I like to build this protection directly into flows rather than waiting for a payload error.</p>
+<p>For example:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">varMaxCardItems = 10</span></span></code></pre></div></div>
+<p>Then:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">take(
+</span></span><span class="line"><span class="cl">    variables(&#39;varResults&#39;),
+</span></span><span class="line"><span class="cl">    variables(&#39;varMaxCardItems&#39;)
+</span></span><span class="line"><span class="cl">)</span></span></code></pre></div></div>
+<p>This means the size of the card remains predictable even if the underlying dataset grows from:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">5 records</span></span></code></pre></div></div>
+<p>to:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">500 records</span></span></code></pre></div></div>
+<p>The notification does not become progressively larger.</p>
+<hr>
+
+<h1 class="relative group">Show how many results were hidden
+    <div id="show-how-many-results-were-hidden" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#show-how-many-results-were-hidden" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>If I limit the results, I also make that clear to the user.</p>
+<p>For example:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">length(variables(&#39;varResults&#39;))</span></span></code></pre></div></div>
+<p>could provide the total count.</p>
+<p>I could then add a message such as:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">24 credentials require attention. The 10 most urgent are shown below.</span></span></code></pre></div></div>
+<p>Or calculate the number not displayed:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">sub(
+</span></span><span class="line"><span class="cl">    length(variables(&#39;varResults&#39;)),
+</span></span><span class="line"><span class="cl">    variables(&#39;varMaxCardItems&#39;)
+</span></span><span class="line"><span class="cl">)</span></span></code></pre></div></div>
+<p>Producing:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">14 additional credentials are included in the full report.</span></span></code></pre></div></div>
+<p>This makes it clear that the card represents a summary rather than the complete result set.</p>
+<hr>
+
+<h1 class="relative group">A better architecture
+    <div id="a-better-architecture" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#a-better-architecture" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Instead of:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Retrieve results
+</span></span><span class="line"><span class="cl">      ↓
+</span></span><span class="line"><span class="cl">Create enormous Adaptive Card
+</span></span><span class="line"><span class="cl">      ↓
+</span></span><span class="line"><span class="cl">Post everything to Teams</span></span></code></pre></div></div>
+<p>I prefer:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Retrieve results
+</span></span><span class="line"><span class="cl">        ↓
+</span></span><span class="line"><span class="cl">Process and classify
+</span></span><span class="line"><span class="cl">        ↓
+</span></span><span class="line"><span class="cl">Store complete results
+</span></span><span class="line"><span class="cl">        ↓
+</span></span><span class="line"><span class="cl">Sort by priority
+</span></span><span class="line"><span class="cl">        ↓
+</span></span><span class="line"><span class="cl">Take highest-priority records
+</span></span><span class="line"><span class="cl">        ↓
+</span></span><span class="line"><span class="cl">Generate summary
+</span></span><span class="line"><span class="cl">        ↓
+</span></span><span class="line"><span class="cl">Post small Adaptive Card
+</span></span><span class="line"><span class="cl">        ↓
+</span></span><span class="line"><span class="cl">Link to complete results</span></span></code></pre></div></div>
+<p>This design has several advantages.</p>
+<p>The Teams card remains:</p>
+<ul>
+<li>readable;</li>
+<li>predictable;</li>
+<li>fast;</li>
+<li>less likely to exceed connector limits;</li>
+<li>useful even if the dataset grows significantly.</li>
+</ul>
+<hr>
+
+<h1 class="relative group">Example card design
+    <div id="example-card-design" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#example-card-design" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Instead of trying to display every expiring credential, I might design the card like this:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">APPLICATION CREDENTIAL EXPIRY
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">27 credentials require attention.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">CRITICAL
+</span></span><span class="line"><span class="cl">3 expire within 7 days
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">WARNING
+</span></span><span class="line"><span class="cl">8 expire within 30 days
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">NEXT TO EXPIRE
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Finance Reporting API            2 days
+</span></span><span class="line"><span class="cl">HR Integration                   4 days
+</span></span><span class="line"><span class="cl">Service Management App           5 days
+</span></span><span class="line"><span class="cl">Document Processing              9 days
+</span></span><span class="line"><span class="cl">Automation Service              12 days
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Showing the 5 most urgent of 27.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[View Full Report]</span></span></code></pre></div></div>
+<p>This provides the important information immediately without attempting to reproduce an entire reporting table inside Teams.</p>
+<hr>
+
+<h1 class="relative group">Add severity summaries instead of more rows
+    <div id="add-severity-summaries-instead-of-more-rows" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#add-severity-summaries-instead-of-more-rows" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Aggregated values often communicate more useful information than dozens of records.</p>
+<p>For example:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">≤ 7 days       3
+</span></span><span class="line"><span class="cl">8–30 days      8
+</span></span><span class="line"><span class="cl">31–60 days    11
+</span></span><span class="line"><span class="cl">61–90 days     5</span></span></code></pre></div></div>
+<p>This gives someone an immediate indication of risk.</p>
+<p>The detailed records can then be shown only for the highest-priority category.</p>
+<hr>
+
+<h1 class="relative group">Why reducing the date range may not solve it
+    <div id="why-reducing-the-date-range-may-not-solve-it" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#why-reducing-the-date-range-may-not-solve-it" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>A common troubleshooting step is changing something such as:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Credentials expiring within 90 days</span></span></code></pre></div></div>
+<p>to:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Credentials expiring within 30 days</span></span></code></pre></div></div>
+<p>This may help, but it does not address the underlying design issue.</p>
+<p>If the dataset grows again, the flow can fail again.</p>
+<p>The same problem occurs if the fix is simply:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Remove a few rows</span></span></code></pre></div></div>
+<p>The flow may work today and fail next month.</p>
+<p>I therefore prefer putting an explicit maximum size on the <strong>number of records presented</strong>, rather than relying on the dataset naturally remaining small.</p>
+<hr>
+
+<h1 class="relative group">Don&rsquo;t confuse payload limits with throttling
+    <div id="dont-confuse-payload-limits-with-throttling" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#dont-confuse-payload-limits-with-throttling" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>There are two different problems that can look similar during troubleshooting.</p>
+
+<h2 class="relative group">Payload problem
+    <div id="payload-problem" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#payload-problem" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">One message is too large.</span></span></code></pre></div></div>
+<p>Typical error:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Request Entity too large</span></span></code></pre></div></div>
+<p>The solution is usually:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Make each message smaller.</span></span></code></pre></div></div>
+
+<h2 class="relative group">Throttling problem
+    <div id="throttling-problem" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#throttling-problem" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Too many requests are being made in a short period.</span></span></code></pre></div></div>
+<p>The solution normally involves things such as:</p>
+<ul>
+<li>reducing request frequency;</li>
+<li>controlling concurrency;</li>
+<li>introducing delays where appropriate;</li>
+<li>reviewing connector limits.</li>
+</ul>
+<p>Splitting one oversized card into 20 smaller cards may fix the first problem while increasing the chances of encountering the second.</p>
+<p>That is another reason why I prefer concise summary cards where possible.</p>
+<hr>
+
+<h1 class="relative group">Validate the finished Adaptive Card
+    <div id="validate-the-finished-adaptive-card" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#validate-the-finished-adaptive-card" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Payload size is not the only reason an Adaptive Card can fail.</p>
+<p>Before assuming every error is related to size, I also check:</p>
+<ul>
+<li>JSON syntax;</li>
+<li>quotation marks;</li>
+<li>commas and braces;</li>
+<li>supported schema properties;</li>
+<li>dynamic values;</li>
+<li>image URLs;</li>
+<li>Adaptive Card version compatibility.</li>
+</ul>
+<p>Microsoft recommends validating generated card JSON when troubleshooting Adaptive Cards used with Power Automate.</p>
+<p>This is especially useful when card JSON has been dynamically assembled rather than written as one static object.</p>
+<hr>
+
+<h1 class="relative group">Add defensive logic
+    <div id="add-defensive-logic" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#add-defensive-logic" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>For important production automation, I prefer the flow to protect itself.</p>
+<p>For example:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Retrieve results
+</span></span><span class="line"><span class="cl">      ↓
+</span></span><span class="line"><span class="cl">Count results
+</span></span><span class="line"><span class="cl">      ↓
+</span></span><span class="line"><span class="cl">Are there more than 10?
+</span></span><span class="line"><span class="cl">      ↓
+</span></span><span class="line"><span class="cl">   Yes       No
+</span></span><span class="line"><span class="cl">    ↓         ↓
+</span></span><span class="line"><span class="cl">Top 10       All
+</span></span><span class="line"><span class="cl">    └────┬────┘
+</span></span><span class="line"><span class="cl">         ↓
+</span></span><span class="line"><span class="cl"> Build Adaptive Card
+</span></span><span class="line"><span class="cl">         ↓
+</span></span><span class="line"><span class="cl">     Post to Teams</span></span></code></pre></div></div>
+<p>The flow therefore controls card growth deliberately.</p>
+<p>Another option is always using:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">take(array, 10)</span></span></code></pre></div></div>
+<p>regardless of the number of results.</p>
+<p>If fewer than ten records exist, <code>take()</code> simply returns those available.</p>
+<hr>
+
+<h1 class="relative group">What I would avoid
+    <div id="what-i-would-avoid" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#what-i-would-avoid" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+
+<h2 class="relative group">Increasing the card until it barely fits
+    <div id="increasing-the-card-until-it-barely-fits" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#increasing-the-card-until-it-barely-fits" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>If a card currently sits just below the connector limit, it has very little tolerance for future growth.</p>
+<p>I would rather redesign it than optimise it to sit immediately below the maximum.</p>
+<hr>
+
+<h2 class="relative group">Hard-coding assumptions about data volume
+    <div id="hard-coding-assumptions-about-data-volume" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#hard-coding-assumptions-about-data-volume" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>For example:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">There will never be more than 20 applications.</span></span></code></pre></div></div>
+<p>Systems change.</p>
+<p>A good notification design should remain reliable even when the amount of underlying data increases substantially.</p>
+<hr>
+
+<h2 class="relative group">Treating Teams as the database
+    <div id="treating-teams-as-the-database" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#treating-teams-as-the-database" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Teams is an excellent place to tell someone:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Something requires your attention.</span></span></code></pre></div></div>
+<p>It is not necessarily the best place to present hundreds of rows of operational data.</p>
+<hr>
+
+<h2 class="relative group">Sending dozens of cards by default
+    <div id="sending-dozens-of-cards-by-default" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#sending-dozens-of-cards-by-default" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Chunking is useful when there is a genuine requirement for detailed information inside Teams.</p>
+<p>It should not normally be the first solution to a reporting problem.</p>
+<hr>
+
+<h1 class="relative group">Recommended pattern
+    <div id="recommended-pattern" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#recommended-pattern" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>For most operational alerts, my preferred pattern is:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">                 FULL DATASET
+</span></span><span class="line"><span class="cl">                      │
+</span></span><span class="line"><span class="cl">                      ▼
+</span></span><span class="line"><span class="cl">             SharePoint / Dataverse
+</span></span><span class="line"><span class="cl">                      │
+</span></span><span class="line"><span class="cl">                      │
+</span></span><span class="line"><span class="cl">              ┌───────┴────────┐
+</span></span><span class="line"><span class="cl">              │                │
+</span></span><span class="line"><span class="cl">              ▼                ▼
+</span></span><span class="line"><span class="cl">         Power BI         Power Automate
+</span></span><span class="line"><span class="cl">                               │
+</span></span><span class="line"><span class="cl">                               ▼
+</span></span><span class="line"><span class="cl">                         Sort by urgency
+</span></span><span class="line"><span class="cl">                               │
+</span></span><span class="line"><span class="cl">                               ▼
+</span></span><span class="line"><span class="cl">                           Take top N
+</span></span><span class="line"><span class="cl">                               │
+</span></span><span class="line"><span class="cl">                               ▼
+</span></span><span class="line"><span class="cl">                       Create summary
+</span></span><span class="line"><span class="cl">                               │
+</span></span><span class="line"><span class="cl">                               ▼
+</span></span><span class="line"><span class="cl">                      Teams Adaptive Card
+</span></span><span class="line"><span class="cl">                               │
+</span></span><span class="line"><span class="cl">                               ▼
+</span></span><span class="line"><span class="cl">                       View Full Report</span></span></code></pre></div></div>
+<p>Teams provides the notification.</p>
+<p>The underlying system provides the detail.</p>
+<hr>
+
+<h1 class="relative group">Troubleshooting checklist
+    <div id="troubleshooting-checklist" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#troubleshooting-checklist" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>When I encounter an Adaptive Card payload error, I normally work through the following checks:</p>
+<ol>
+<li>
+<p><strong>Confirm the actual Teams action error.</strong></p>
+</li>
+<li>
+<p><strong>Inspect the completed Adaptive Card JSON.</strong></p>
+</li>
+<li>
+<p><strong>Check how many dynamic records are being inserted.</strong></p>
+</li>
+<li>
+<p><strong>Look for deeply repeated <code>Container</code>, <code>ColumnSet</code> and <code>TextBlock</code> structures.</strong></p>
+</li>
+<li>
+<p><strong>Remove unnecessary fields and formatting.</strong></p>
+</li>
+<li>
+<p><strong>Sort the results by importance.</strong></p>
+</li>
+<li>
+<p><strong>Use <code>take()</code> to cap the number shown.</strong></p>
+</li>
+<li>
+<p><strong>Display the total number of results separately.</strong></p>
+</li>
+<li>
+<p><strong>Move the complete dataset to a proper reporting location.</strong></p>
+</li>
+<li>
+<p><strong>Add a link from Teams to the complete report.</strong></p>
+</li>
+<li>
+<p><strong>Consider chunking only where users genuinely need every record in Teams.</strong></p>
+</li>
+<li>
+<p><strong>Test the flow with a deliberately large dataset rather than only the normal development dataset.</strong></p>
+</li>
+</ol>
+<hr>
+
+<h1 class="relative group">Testing for scale
+    <div id="testing-for-scale" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#testing-for-scale" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>One lesson I find particularly important is testing the automation with more data than I expect it to encounter normally.</p>
+<p>A card that works with:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">3 records</span></span></code></pre></div></div>
+<p>does not prove that it will work with:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">30 records</span></span></code></pre></div></div>
+<p>When developing a dynamic Adaptive Card, I therefore try to test:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Small dataset
+</span></span><span class="line"><span class="cl">     ↓
+</span></span><span class="line"><span class="cl">Normal dataset
+</span></span><span class="line"><span class="cl">     ↓
+</span></span><span class="line"><span class="cl">Large dataset
+</span></span><span class="line"><span class="cl">     ↓
+</span></span><span class="line"><span class="cl">Worst reasonable case</span></span></code></pre></div></div>
+<p>This helps identify payload-size problems before they occur in production.</p>
+<hr>
+
+<h1 class="relative group">Final design principle
+    <div id="final-design-principle" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#final-design-principle" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>The most important lesson is that an Adaptive Card should not grow indefinitely with the underlying dataset.</p>
+<p>Instead of thinking:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">How can I squeeze all these records into the card?</span></span></code></pre></div></div>
+<p>I prefer to ask:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">What does the person receiving this notification actually need to know?</span></span></code></pre></div></div>
+<p>Usually the answer is:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">What happened?
+</span></span><span class="line"><span class="cl">How serious is it?
+</span></span><span class="line"><span class="cl">What requires attention first?
+</span></span><span class="line"><span class="cl">How many items are affected?
+</span></span><span class="line"><span class="cl">Where can I see the details?</span></span></code></pre></div></div>
+<p>A card designed around those questions will usually be smaller, easier to understand and considerably more resilient.</p>
+<hr>
+
+<h2 class="relative group">Key takeaway
+    <div id="key-takeaway" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#key-takeaway" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>If a Power Automate Teams action fails because an Adaptive Card exceeds the payload limit, reducing a few rows may get the flow running again, but it does not solve the underlying scalability problem.</p>
+<p>A stronger pattern is:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Summarise
+</span></span><span class="line"><span class="cl">   +
+</span></span><span class="line"><span class="cl">Prioritise
+</span></span><span class="line"><span class="cl">   +
+</span></span><span class="line"><span class="cl">Limit
+</span></span><span class="line"><span class="cl">   +
+</span></span><span class="line"><span class="cl">Link to the detail</span></span></code></pre></div></div>
+<p>That turns the Adaptive Card from an oversized report into what it is particularly good at being:</p>
+<p><strong>a concise, actionable notification.</strong></p>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span class="flex flex-col">
+          
+            <a
+              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/guides/handling-pagination-graph-powerautomate/">
+              <span class="leading-6">
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;Handling Pagination When Calling Microsoft Graph from Power Automate
+              </span>
+            </a>
+            
+              <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2026-09-21T00:00:00&#43;00:00">21 September 2026</time>
+              </span>
+            
+          
+        </span>
+        <span class="flex flex-col items-end">
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2026
+          Rafal Reed
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+      </p>
+    
+  </div>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Search"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          aria-label="Search"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+    
+    
+  </body>
+  
+</html>

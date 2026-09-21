@@ -4,6 +4,8 @@ title: "SharePoint Usage Analytics & Power BI"
 date: 2026-09-21
 description: "A reporting pipeline that captures historical SharePoint usage data and transforms it into management analytics in Power BI."
 summary: "Building a historical SharePoint analytics platform using Microsoft Graph reporting, Power Automate, Dataverse and Power BI."
+showHero: true
+heroStyle: "big"
 tags:
 
 - SharePoint

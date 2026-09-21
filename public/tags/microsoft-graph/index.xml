@@ -18,6 +18,16 @@
       <author>rafal.reed@hotmail.com (Rafal Reed)</author>
       <guid>http://localhost:1313/projects/inactive-account-lifecycle/</guid>
       <description>Automating inactive-account governance using Microsoft Graph, Power Automate and structured lifecycle tracking.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/inactive-account-lifecycle/feature.png" />
+    </item>
+    
+    <item>
+      <title>Handling Pagination When Calling Microsoft Graph from Power Automate</title>
+      <link>http://localhost:1313/guides/handling-pagination-graph-powerautomate/</link>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/guides/handling-pagination-graph-powerautomate/</guid>
+      <description></description>
       
     </item>
     
@@ -28,7 +38,7 @@
       <author>rafal.reed@hotmail.com (Rafal Reed)</author>
       <guid>http://localhost:1313/projects/sharepoint-usage-analytics/</guid>
       <description>Building a historical SharePoint analytics platform using Microsoft Graph reporting, Power Automate, Dataverse and Power BI.</description>
-      
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/sharepoint-usage-analytics/feature.png" />
     </item>
     
   </channel>
