@@ -3,6 +3,8 @@ title: "Teams Telephony Self-Service Automation"
 date: 2026-09-21
 description: "A self-service Power Platform solution enabling authorised users to manage Microsoft Teams telephony routing without requiring direct administrative access."
 summary: "Replacing an administrator-dependent Teams telephony process with a secure self-service solution built with Power Apps, Power Automate and Azure Automation."
+showHero: true
+heroStyle: "big"
 tags:
   - Power Apps
   - Power Automate

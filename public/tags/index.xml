@@ -22,11 +22,61 @@
     </item>
     
     <item>
+      <title>Dataverse</title>
+      <link>http://localhost:1313/tags/dataverse/</link>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/tags/dataverse/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Identity Governance</title>
+      <link>http://localhost:1313/tags/identity-governance/</link>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/tags/identity-governance/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Microsoft Entra ID</title>
+      <link>http://localhost:1313/tags/microsoft-entra-id/</link>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/tags/microsoft-entra-id/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Microsoft Graph</title>
+      <link>http://localhost:1313/tags/microsoft-graph/</link>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/tags/microsoft-graph/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Microsoft Teams</title>
       <link>http://localhost:1313/tags/microsoft-teams/</link>
       <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
       <author>rafal.reed@hotmail.com (Rafal Reed)</author>
       <guid>http://localhost:1313/tags/microsoft-teams/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Office Scripts</title>
+      <link>http://localhost:1313/tags/office-scripts/</link>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/tags/office-scripts/</guid>
       <description></description>
       
     </item>
@@ -47,6 +97,16 @@
       <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
       <author>rafal.reed@hotmail.com (Rafal Reed)</author>
       <guid>http://localhost:1313/tags/power-automate/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Power BI</title>
+      <link>http://localhost:1313/tags/power-bi/</link>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/tags/power-bi/</guid>
       <description></description>
       
     </item>

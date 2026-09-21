@@ -18,7 +18,7 @@
       <author>rafal.reed@hotmail.com (Rafal Reed)</author>
       <guid>http://localhost:1313/projects/teams-telephony-automation/</guid>
       <description>Replacing an administrator-dependent Teams telephony process with a secure self-service solution built with Power Apps, Power Automate and Azure Automation.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/teams-telephony-automation/feature.png" />
+      
     </item>
     
   </channel>

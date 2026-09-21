@@ -12,6 +12,26 @@
     <lastBuildDate>Mon, 21 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/power-automate/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Automated Inactive Account Lifecycle Management</title>
+      <link>http://localhost:1313/projects/inactive-account-lifecycle/</link>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/projects/inactive-account-lifecycle/</guid>
+      <description>Automating inactive-account governance using Microsoft Graph, Power Automate and structured lifecycle tracking.</description>
+      
+    </item>
+    
+    <item>
+      <title>SharePoint Usage Analytics &amp; Power BI</title>
+      <link>http://localhost:1313/projects/sharepoint-usage-analytics/</link>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/projects/sharepoint-usage-analytics/</guid>
+      <description>Building a historical SharePoint analytics platform using Microsoft Graph reporting, Power Automate, Dataverse and Power BI.</description>
+      
+    </item>
+    
+    <item>
       <title>Teams Telephony Self-Service Automation</title>
       <link>http://localhost:1313/projects/teams-telephony-automation/</link>
       <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>

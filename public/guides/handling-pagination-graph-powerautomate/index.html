@@ -1,0 +1,1569 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title>Handling Pagination When Calling Microsoft Graph from Power Automate &middot; Rafal Reed</title>
+    <meta name="title" content="Handling Pagination When Calling Microsoft Graph from Power Automate &middot; Rafal Reed">
+  
+
+  
+  
+  
+  
+  
+    
+  
+    
+  
+    
+  
+  
+  
+    <meta name="keywords" content="Microsoft Graph,Power Automate,">
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/guides/handling-pagination-graph-powerautomate/">
+  
+  
+
+  
+  
+    <meta name="author" content="Rafal Reed">
+  
+  
+    
+      
+        
+          <link href="https://github.com/rafalreed" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://www.linkedin.com/in/rafal-reed-1738b91b4" rel="me">
+        
+      
+    
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/guides/handling-pagination-graph-powerautomate/">
+	<meta property="og:site_name" content="Rafal Reed">
+	<meta property="og:title" content="Handling Pagination When Calling Microsoft Graph from Power Automate">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="guides">
+		<meta property="article:published_time" content="2026-09-21T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-09-21T00:00:00+00:00">
+		<meta property="article:tag" content="Microsoft Graph">
+		<meta property="article:tag" content="Power Automate">
+
+  
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Handling Pagination When Calling Microsoft Graph from Power Automate">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.163b1a537d7d19ec16c2ebb45902386b6e2b94c9b4b5f8c82958e5baed6fd863aed36a5f5bbf3c614a6e9025b13c5b7e03513e563e022249501dcadb5cbbd13c.css"
+    integrity="sha512-FjsaU319GewWwuu0WQI4a24rlMm0tfjIKVjluu1v2GOu02pfW788YUpukCWxPFt&#43;A1E&#43;Vj4CIklQHcrbXLvRPA==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.764f412f07ea715415e9123a5eb5f355429502d0b760146b9bcab854bc50829dee14488594acd935dfcdc6a0fe7e6d14d7bee914ebb9272b251aa238cb52c4dd.js"
+    integrity="sha512-dk9BLwfqcVQV6RI6XrXzVUKVAtC3YBRrm8q4VLxQgp3uFEiFlKzZNd/NxqD&#43;fm0U177pFOu5JyslGqI4y1LE3Q=="></script>
+  
+
+
+  
+  
+  
+  
+  
+  
+    
+    <script defer src="/lib/zoom/zoom.min.umd.b4b722fcb5d42f34f52b30a92f3521b69f403ca9d96d0d6179eb537cb870f5d83fdf1fe836688d95d5c99fefbda4170487711006e56051fa67ea00da10521721.js" integrity="sha512-tLci/LXULzT1KzCpLzUhtp9APKnZbQ1heetTfLhw9dg/3x/oNmiNldXJn&#43;&#43;9pBcEh3EQBuVgUfpn6gDaEFIXIQ=="></script>
+    
+    <script defer src="/js/medium-zoom.7f76d937fbb793f3703fedc60ee1e6345259cf2ada403d1876b806fffeaeb2ba6fc594eaccad75c96d5d2425e9fb833748bf1221b4d90d3cf78cf073e104f814.js" integrity="sha512-f3bZN/u3k/NwP&#43;3GDuHmNFJZzyraQD0YdrgG//6usrpvxZTqzK11yW1dJCXp&#43;4M3SL8SIbTZDTz3jPBz4QT4FA=="></script>
+  
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.741242ef934dc59264f0354960792bb06fa5fdef01a762e81f6aaac0a68a8212fa27788ea81bcd0a1ea9bd62386a81012b4ba68043b2b6dfcb57b1b03845078d.js"
+      integrity="sha512-dBJC75NNxZJk8DVJYHkrsG&#43;l/e8Bp2LoH2qqwKaKghL6J3iOqBvNCh6pvWI4aoEBK0umgEOytt/LV7GwOEUHjQ=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Guides",
+    "name": "Handling Pagination When Calling Microsoft Graph from Power Automate",
+    "headline": "Handling Pagination When Calling Microsoft Graph from Power Automate",
+    
+    "inLanguage": "en",
+    "url" : "http://localhost:1313/guides/handling-pagination-graph-powerautomate/",
+    "author" : {
+      "@type": "Person",
+      "name": "Rafal Reed",
+      "sameAs": ["https://github.com/rafalreed", "https://www.linkedin.com/in/rafal-reed-1738b91b4"]
+    },
+    "copyrightYear": "2026",
+    "dateCreated": "2026-09-21T00:00:00\u002b00:00",
+    "datePublished": "2026-09-21T00:00:00\u002b00:00",
+    
+    "dateModified": "2026-09-21T00:00:00\u002b00:00",
+    
+    "keywords": ["Microsoft Graph","Power Automate"],
+    
+    "mainEntityOfPage": "http://localhost:1313/guides/handling-pagination-graph-powerautomate/",
+    "wordCount":  1928 
+  }]
+  </script>
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral bf-scrollbar">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    <header>
+      
+      
+        <div class="main-menu flex items-center w-full gap-2 p-1 pl-0">
+  
+  
+    <a href="/" class="text-base font-medium truncate min-w-0 shrink">
+      Rafal Reed
+    </a>
+  
+  <div class="flex items-center ms-auto">
+    <div class="hidden md:flex">
+      <nav aria-label="Main menu" class="flex items-center gap-x-5 h-12">
+  
+    
+      
+  
+    <a
+      href="/projects/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="Projects"
+      title="Projects">
+      
+      
+        <span class="text-sm font-medium break-normal">
+          Projects
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/guides/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="Guides"
+      title="Guides">
+      
+      
+        <span class="text-sm font-medium break-normal">
+          Guides
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/about/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="About"
+      title="About">
+      
+      
+        <span class="text-sm font-medium break-normal">
+          About
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="https://github.com/rafalreed"
+      
+        target="_blank"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="github"
+      title="">
+      
+        <span >
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+        </span>
+      
+      
+    </a>
+  
+
+    
+  
+
+  
+
+  
+
+  
+    <div class="flex items-center">
+      <button
+        id="appearance-switcher"
+        aria-label="Switch to dark appearance"
+        type="button"
+        class="text-sm bf-icon-color-hover"
+        title="Switch to dark appearance">
+        <div class="flex items-center justify-center dark:hidden">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+        </div>
+      </button>
+    </div>
+  
+
+  
+    <button
+      id="search-button"
+      aria-label="Search (/ or ⌘K)"
+      class="flex items-center gap-2 rounded-lg border bf-border-color bf-border-color-hover bg-neutral-100/50 px-2 py-1 text-sm text-neutral-500 transition-colors hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral-400 dark:hover:text-primary-400"
+      title="Search (/ or ⌘K)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      <kbd
+        id="search-shortcut-hint"
+        class="pointer-events-none font-sans text-xs text-neutral-500 dark:text-neutral-400"
+        aria-hidden="true">
+        ⌘K
+      </kbd>
+    </button>
+  
+</nav>
+
+
+
+    </div>
+    <div class="flex md:hidden">
+      
+<div class="mobile-header-row relative flex items-center h-14 gap-4">
+  
+
+  
+    <button
+      id="appearance-switcher-mobile"
+      type="button"
+      aria-label="Switch to dark appearance"
+      title="Switch to dark appearance"
+      class="flex items-center justify-center text-neutral-900 hover:text-primary-600 dark:text-neutral-200 dark:hover:text-primary-400">
+      <div class="dark:hidden">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+      </div>
+      <div class="hidden dark:block">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+      </div>
+    </button>
+  
+
+  
+    <button
+      id="search-button-mobile"
+      aria-label="Search (/ or ⌘K)"
+      class="flex items-center justify-center bf-icon-color-hover"
+      title="Search (/ or ⌘K)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+    </button>
+  
+
+  
+    <input type="checkbox" id="mobile-menu-toggle" autocomplete="off" class="hidden peer">
+    <label
+      for="mobile-menu-toggle"
+      tabindex="0"
+      role="button"
+      aria-expanded="false"
+      aria-controls="mobile-menu-dialog"
+      aria-label="Main menu"
+      class="flex items-center justify-center cursor-pointer bf-icon-color-hover">
+      <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+    </label>
+
+    <div
+      id="mobile-menu-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Main menu"
+      style="scrollbar-gutter: stable;"
+      class="z-50 invisible overflow-y-auto opacity-0 transition-[opacity,visibility] duration-300 peer-checked:visible peer-checked:opacity-100
+      
+        fixed inset-0 px-6 py-20 bg-neutral-50/97 dark:bg-neutral-900/99
+      
+      bf-scrollbar">
+      <label
+        for="mobile-menu-toggle"
+        tabindex="0"
+        role="button"
+        aria-expanded="false"
+        aria-controls="mobile-menu-dialog"
+        class="fixed end-8 top-5 z-50 h-12 w-12 rounded-full flex items-center justify-center cursor-pointer select-none bf-icon-color-hover border bf-border-color bf-border-color-hover bg-neutral-50 dark:bg-neutral-900">
+        <span class="sr-only">Close menu</span>
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </label>
+      <nav
+        aria-label="Mobile menu"
+        class="mx-auto max-w-md space-y-6">
+        
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="/projects/"
+          aria-label="Projects"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+          <span title="Projects" class="text-2xl font-bold tracking-tight">
+            Projects
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="/guides/"
+          aria-label="Guides"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+          <span title="Guides" class="text-2xl font-bold tracking-tight">
+            Guides
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="/about/"
+          aria-label="About"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+          <span title="About" class="text-2xl font-bold tracking-tight">
+            About
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="https://github.com/rafalreed"
+          aria-label="github"
+          
+            target="_blank"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+            <span class="flex items-center justify-center h-8 w-8 text-2xl">
+              <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+            </span>
+          
+          <span title="" class="text-2xl font-bold tracking-tight">
+            
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+
+        
+  
+
+        
+  
+
+      </nav>
+    </div>
+  
+</div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+      
+    </header>
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  
+  
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Handling Pagination When Calling Microsoft Graph from Power Automate
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2026-09-21T00:00:00&#43;00:00">21 September 2026</time><span class="px-2 text-primary-500">&middot;</span><span>1928 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">10 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    
+      
+      
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        Author
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        Rafal Reed
+      </div>
+    
+    
+      <div class="text-sm text-neutral-700 dark:text-neutral-400">Building governed automation, applications and Microsoft 365 solutions that solve real operational problems.</div>
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500 space-x-2">
+    
+      
+        
+        <a
+          class=" hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/rafalreed"
+          
+          target="_blank"
+          aria-label="Github"
+          title="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span></span></a
+        >
+      
+    
+      
+        
+        <a
+          class=" hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://www.linkedin.com/in/rafal-reed-1738b91b4"
+          
+          target="_blank"
+          aria-label="Linkedin"
+          title="Linkedin"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+</span></span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+    
+  
+
+  
+    <div class="mb-5"></div>
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          <p>When working with Microsoft Graph in Power Automate, one of the easiest mistakes to make is assuming that a successful API call has returned <strong>all available records</strong>.</p>
+<p>In many cases, it has not.</p>
+<p>Microsoft Graph frequently returns data in pages. If there are more records available than can be returned in a single response, Graph provides an <code>@odata.nextLink</code> property containing the URL for the next page.</p>
+<p>If that link is ignored, a flow may process only the first set of results without producing an obvious error.</p>
+<p>This guide shows how I handle Microsoft Graph pagination in Power Automate so that a flow continues retrieving records until every page has been processed.</p>
+<hr>
+
+<h2 class="relative group">The problem
+    <div id="the-problem" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#the-problem" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Consider a request such as:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="err">GET https://graph.microsoft.com/v1.0/users</span></span></span></code></pre></div></div>
+<p>A simplified response may look like this:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;@odata.context&#34;</span><span class="p">:</span> <span class="s2">&#34;https://graph.microsoft.com/v1.0/$metadata#users&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;12345&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;displayName&#34;</span><span class="p">:</span> <span class="s2">&#34;Example User&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;@odata.nextLink&#34;</span><span class="p">:</span> <span class="s2">&#34;https://graph.microsoft.com/v1.0/users?$skiptoken=...&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p>The important property is:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">@odata.nextLink</span></span></code></pre></div></div>
+<p>Its presence means:</p>
+<blockquote><p>There are more records available.</p>
+</blockquote><p>The URL already contains the information Graph needs to retrieve the next page, normally including a paging token.</p>
+<p>The flow should therefore:</p>
+<ol>
+<li>Make the initial Graph request.</li>
+<li>Process or store the returned <code>value</code> array.</li>
+<li>Check for <code>@odata.nextLink</code>.</li>
+<li>If it exists, call the URL provided by Graph.</li>
+<li>Repeat until no next link is returned.</li>
+</ol>
+<hr>
+
+<h1 class="relative group">Why this matters
+    <div id="why-this-matters" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#why-this-matters" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Pagination can easily go unnoticed during development.</p>
+<p>For example, a flow might be tested in a development tenant containing only a few dozen accounts. The same flow could later run against a production tenant containing thousands of users.</p>
+<p>Without pagination, the flow may still:</p>
+<ul>
+<li>complete successfully;</li>
+<li>return HTTP <code>200</code>;</li>
+<li>process valid users;</li>
+<li>update SharePoint or Dataverse;</li>
+<li>send notifications.</li>
+</ul>
+<p>The problem is that it may have processed only part of the dataset.</p>
+<p>This makes pagination particularly important for administrative automation such as:</p>
+<ul>
+<li>user lifecycle management;</li>
+<li>inactive account reporting;</li>
+<li>licence reporting;</li>
+<li>application and service principal inventories;</li>
+<li>device inventories;</li>
+<li>group membership processing;</li>
+<li>SharePoint reporting;</li>
+<li>security and governance automation.</li>
+</ul>
+<hr>
+
+<h1 class="relative group">The pattern I use
+    <div id="the-pattern-i-use" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#the-pattern-i-use" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>For Power Automate, I normally use a <strong>Do until loop</strong> controlled by a variable containing the URL for the next Graph request.</p>
+<p>The basic structure looks like this:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Initialise variables
+</span></span><span class="line"><span class="cl">        ↓
+</span></span><span class="line"><span class="cl">Set Graph URL
+</span></span><span class="line"><span class="cl">        ↓
+</span></span><span class="line"><span class="cl">Do until Graph URL is empty
+</span></span><span class="line"><span class="cl">        ↓
+</span></span><span class="line"><span class="cl">Call Microsoft Graph
+</span></span><span class="line"><span class="cl">        ↓
+</span></span><span class="line"><span class="cl">Process response.value
+</span></span><span class="line"><span class="cl">        ↓
+</span></span><span class="line"><span class="cl">Set Graph URL = @odata.nextLink
+</span></span><span class="line"><span class="cl">        ↓
+</span></span><span class="line"><span class="cl">Repeat</span></span></code></pre></div></div>
+<p>Once Graph stops returning <code>@odata.nextLink</code>, the URL variable becomes empty and the loop ends.</p>
+<hr>
+
+<h1 class="relative group">Step 1 - Initialise the variables
+    <div id="step-1---initialise-the-variables" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#step-1---initialise-the-variables" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Create a string variable:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Name: varGraphUrl
+</span></span><span class="line"><span class="cl">Type: String</span></span></code></pre></div></div>
+<p>Set its initial value to the Graph endpoint you want to query.</p>
+<p>For example:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">https://graph.microsoft.com/v1.0/users</span></span></code></pre></div></div>
+<p>I also commonly create an array variable:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Name: varResults
+</span></span><span class="line"><span class="cl">Type: Array
+</span></span><span class="line"><span class="cl">Value: []</span></span></code></pre></div></div>
+<p>This is useful when I need to collect all records before processing them later.</p>
+<p>Whether an array variable is necessary depends on the flow.</p>
+<p>For large datasets, processing each page immediately can be more efficient than building one very large array in memory.</p>
+<hr>
+
+<h1 class="relative group">Step 2 - Create the Do until loop
+    <div id="step-2---create-the-do-until-loop" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#step-2---create-the-do-until-loop" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Add a <strong>Do until</strong> action.</p>
+<p>The loop should continue until <code>varGraphUrl</code> is empty.</p>
+<p>One way of expressing the condition is:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">empty(variables(&#39;varGraphUrl&#39;))</span></span></code></pre></div></div>
+<p>The loop therefore finishes once this expression evaluates to:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">true</span></span></code></pre></div></div>
+<p>At the beginning of the process <code>varGraphUrl</code> contains the initial Graph endpoint, so the loop starts normally.</p>
+<hr>
+
+<h1 class="relative group">Step 3 - Call Microsoft Graph
+    <div id="step-3---call-microsoft-graph" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#step-3---call-microsoft-graph" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Inside the loop, make the HTTP request using the URL stored in the variable.</p>
+<p>Conceptually:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="err">GET @{variables(&#39;varGraphUrl&#39;)}</span></span></span></code></pre></div></div>
+<p>The exact HTTP action depends on how the flow authenticates to Microsoft Graph.</p>
+<p>For example, the request might be made through:</p>
+<ul>
+<li>HTTP with Microsoft Entra ID;</li>
+<li>an authenticated custom connector;</li>
+<li>another authorised Graph integration.</li>
+</ul>
+<p>The important part of the pagination design is that the request URI comes from <code>varGraphUrl</code>.</p>
+<p>For the first iteration this will contain the original endpoint.</p>
+<p>For later iterations it will contain the URL returned in <code>@odata.nextLink</code>.</p>
+<hr>
+
+<h1 class="relative group">Step 4 - Read the records from <code>value</code>
+    <div id="step-4---read-the-records-from-value" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#step-4---read-the-records-from-value" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Microsoft Graph normally returns collections inside the <code>value</code> property.</p>
+<p>For example:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;1&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;displayName&#34;</span><span class="p">:</span> <span class="s2">&#34;User One&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;2&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;displayName&#34;</span><span class="p">:</span> <span class="s2">&#34;User Two&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p>The array can normally be referenced with an expression similar to:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">body(&#39;HTTP&#39;)?[&#39;value&#39;]</span></span></code></pre></div></div>
+<p>You can then either:</p>
+
+<h3 class="relative group">Process each page immediately
+    <div id="process-each-page-immediately" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#process-each-page-immediately" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Use an <strong>Apply to each</strong> against:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">body(&#39;HTTP&#39;)?[&#39;value&#39;]</span></span></code></pre></div></div>
+<p>and perform whatever work is required for each object.</p>
+<p>This is often my preferred approach when the records do not need to be combined into one large dataset.</p>
+
+<h3 class="relative group">Or collect the results
+    <div id="or-collect-the-results" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#or-collect-the-results" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>If the complete dataset is required later in the flow, the records can be added to an array.</p>
+<p>The exact implementation depends on what will be done with the results afterwards.</p>
+<hr>
+
+<h1 class="relative group">Step 5 - Capture <code>@odata.nextLink</code>
+    <div id="step-5---capture-odatanextlink" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#step-5---capture-odatanextlink" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>After processing the current page, update <code>varGraphUrl</code>.</p>
+<p>Use:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">body(&#39;HTTP&#39;)?[&#39;@odata.nextLink&#39;]</span></span></code></pre></div></div>
+<p>However, I prefer to handle the possibility that the property does not exist.</p>
+<p>A safer expression is:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">coalesce(
+</span></span><span class="line"><span class="cl">    body(&#39;HTTP&#39;)?[&#39;@odata.nextLink&#39;],
+</span></span><span class="line"><span class="cl">    &#39;&#39;
+</span></span><span class="line"><span class="cl">)</span></span></code></pre></div></div>
+<p>This does two things.</p>
+<p>If another page exists:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">varGraphUrl = https://graph.microsoft.com/...</span></span></code></pre></div></div>
+<p>If there are no more pages:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">varGraphUrl = &#39;&#39;</span></span></code></pre></div></div>
+<p>The <strong>Do until</strong> condition then detects the empty string and finishes.</p>
+<hr>
+
+<h1 class="relative group">Complete flow logic
+    <div id="complete-flow-logic" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#complete-flow-logic" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>The completed pattern can be represented as:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Initialise varGraphUrl
+</span></span><span class="line"><span class="cl">    |
+</span></span><span class="line"><span class="cl">    |-- https://graph.microsoft.com/v1.0/users
+</span></span><span class="line"><span class="cl">    |
+</span></span><span class="line"><span class="cl">Initialise varResults
+</span></span><span class="line"><span class="cl">    |
+</span></span><span class="line"><span class="cl">    |-- []
+</span></span><span class="line"><span class="cl">    |
+</span></span><span class="line"><span class="cl">Do until: empty(varGraphUrl)
+</span></span><span class="line"><span class="cl">    |
+</span></span><span class="line"><span class="cl">    +-- HTTP GET
+</span></span><span class="line"><span class="cl">    |      URI = varGraphUrl
+</span></span><span class="line"><span class="cl">    |
+</span></span><span class="line"><span class="cl">    +-- Process body(&#39;HTTP&#39;)?[&#39;value&#39;]
+</span></span><span class="line"><span class="cl">    |
+</span></span><span class="line"><span class="cl">    +-- Set varGraphUrl
+</span></span><span class="line"><span class="cl">           |
+</span></span><span class="line"><span class="cl">           +-- coalesce(
+</span></span><span class="line"><span class="cl">                   body(&#39;HTTP&#39;)?[&#39;@odata.nextLink&#39;],
+</span></span><span class="line"><span class="cl">                   &#39;&#39;
+</span></span><span class="line"><span class="cl">               )</span></span></code></pre></div></div>
+<p>Graph controls the pagination and Power Automate simply follows the links until no more remain.</p>
+<hr>
+
+<h1 class="relative group">Do not construct the next URL manually
+    <div id="do-not-construct-the-next-url-manually" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#do-not-construct-the-next-url-manually" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>One important rule is:</p>
+<p><strong>Use the URL returned by <code>@odata.nextLink</code>.</strong></p>
+<p>Do not try to extract the paging token and reconstruct the URL yourself unless there is a specific technical reason to do so.</p>
+<p>For example, Graph may return something similar to:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">https://graph.microsoft.com/v1.0/users?$skiptoken=RFNwdAIAAQAA...</span></span></code></pre></div></div>
+<p>The safest approach is simply:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">GET &lt;the entire @odata.nextLink value&gt;</span></span></code></pre></div></div>
+<p>The paging information should generally be treated as opaque.</p>
+<hr>
+
+<h1 class="relative group">Using <code>$select</code>
+    <div id="using-select" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#using-select" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>If I only need a few properties, I reduce the response size with <code>$select</code>.</p>
+<p>Instead of:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="err">GET https://graph.microsoft.com/v1.0/users</span></span></span></code></pre></div></div>
+<p>I might use:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="err">GET https://graph.microsoft.com/v1.0/users?$select=id,displayName,userPrincipalName,accountEnabled</span></span></span></code></pre></div></div>
+<p>This can significantly reduce unnecessary data being transferred and processed by the flow.</p>
+<p>It also makes the returned JSON easier to work with.</p>
+<p>Pagination works in exactly the same way.</p>
+<p>Graph includes the appropriate query information in the next link it returns.</p>
+<hr>
+
+<h1 class="relative group">Using <code>$top</code>
+    <div id="using-top" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#using-top" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Some Microsoft Graph APIs allow the requested page size to be influenced using <code>$top</code>.</p>
+<p>For example:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="err">GET https://graph.microsoft.com/v1.0/users?$top=500</span></span></span></code></pre></div></div>
+<p>It is important not to confuse <code>$top</code> with pagination.</p>
+<p>Requesting a larger page does <strong>not</strong> mean:</p>
+<blockquote><p>Return every record in the tenant.</p>
+</blockquote><p>It means:</p>
+<blockquote><p>Request up to this number of records for this page, where supported.</p>
+</blockquote><p>Graph may still return an <code>@odata.nextLink</code>.</p>
+<p>The flow should therefore continue checking for pagination regardless of the requested page size.</p>
+<hr>
+
+<h1 class="relative group">A reusable expression
+    <div id="a-reusable-expression" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#a-reusable-expression" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>One of the most useful expressions in this pattern is:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">coalesce(
+</span></span><span class="line"><span class="cl">    body(&#39;HTTP&#39;)?[&#39;@odata.nextLink&#39;],
+</span></span><span class="line"><span class="cl">    &#39;&#39;
+</span></span><span class="line"><span class="cl">)</span></span></code></pre></div></div>
+<p>Using the safe-navigation operator:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">?[&#39;@odata.nextLink&#39;]</span></span></code></pre></div></div>
+<p>means the flow does not fail simply because the property is absent.</p>
+<p><code>coalesce()</code> then converts the missing value into an empty string which can be used by the loop condition.</p>
+<hr>
+
+<h1 class="relative group">Processing records page-by-page vs storing everything
+    <div id="processing-records-page-by-page-vs-storing-everything" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#processing-records-page-by-page-vs-storing-everything" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>There are two common approaches.</p>
+
+<h2 class="relative group">Option 1 - Process each page immediately
+    <div id="option-1---process-each-page-immediately" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#option-1---process-each-page-immediately" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Graph page
+</span></span><span class="line"><span class="cl">   ↓
+</span></span><span class="line"><span class="cl">Apply to each
+</span></span><span class="line"><span class="cl">   ↓
+</span></span><span class="line"><span class="cl">Perform actions
+</span></span><span class="line"><span class="cl">   ↓
+</span></span><span class="line"><span class="cl">Get next page</span></span></code></pre></div></div>
+<p>I generally prefer this approach for large datasets.</p>
+<p>Advantages include:</p>
+<ul>
+<li>less data held in flow variables;</li>
+<li>simpler memory usage;</li>
+<li>processing starts immediately;</li>
+<li>easier handling of large collections.</li>
+</ul>
+<p>For example, a user lifecycle flow could retrieve one page of accounts, evaluate those users, then continue to the next page.</p>
+<hr>
+
+<h2 class="relative group">Option 2 - Build one complete array
+    <div id="option-2---build-one-complete-array" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#option-2---build-one-complete-array" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Graph page 1 ─┐
+</span></span><span class="line"><span class="cl">Graph page 2 ─┤
+</span></span><span class="line"><span class="cl">Graph page 3 ─┼── Complete array
+</span></span><span class="line"><span class="cl">Graph page 4 ─┘</span></span></code></pre></div></div>
+<p>This can be useful when later steps require the entire dataset.</p>
+<p>Examples might include:</p>
+<ul>
+<li>generating a single report;</li>
+<li>comparing records across the complete collection;</li>
+<li>passing all results to another service;</li>
+<li>producing a consolidated output.</li>
+</ul>
+<p>The trade-off is that very large arrays can make Power Automate flows more resource-intensive and harder to troubleshoot.</p>
+<hr>
+
+<h1 class="relative group">Handling throttling
+    <div id="handling-throttling" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#handling-throttling" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Pagination can result in many Graph requests, particularly in large environments.</p>
+<p>Microsoft Graph may throttle requests and return:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="err">429 Too Many Requests</span></span></span></code></pre></div></div>
+<p>Where appropriate, production flows should account for this.</p>
+<p>The response may include a <code>Retry-After</code> header indicating how long the caller should wait before retrying.</p>
+<p>Other useful design considerations include:</p>
+<ul>
+<li>avoiding unnecessary Graph calls;</li>
+<li>retrieving only required properties with <code>$select</code>;</li>
+<li>avoiding excessive nested HTTP requests;</li>
+<li>using sensible Power Automate retry policies;</li>
+<li>limiting concurrency where appropriate.</li>
+</ul>
+<p>Pagination solves the problem of retrieving all records, but the wider flow still needs to be designed with Graph service limits in mind.</p>
+<hr>
+
+<h1 class="relative group">Check the Do until limits
+    <div id="check-the-do-until-limits" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#check-the-do-until-limits" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>A Power Automate <strong>Do until</strong> action has execution limits.</p>
+<p>If a Graph query could require a large number of pages, I check the loop configuration rather than relying blindly on the defaults.</p>
+<p>This is particularly important when using small Graph page sizes against large directories.</p>
+<p>A flow can otherwise stop because the Power Automate loop limit has been reached rather than because Graph has finished returning data.</p>
+<hr>
+
+<h1 class="relative group">Common mistakes
+    <div id="common-mistakes" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#common-mistakes" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+
+<h2 class="relative group">Only reading the first <code>value</code> array
+    <div id="only-reading-the-first-value-array" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#only-reading-the-first-value-array" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>This is probably the easiest pagination issue to introduce.</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">HTTP → Parse JSON → Apply to each</span></span></code></pre></div></div>
+<p>may look completely correct while processing only the first page.</p>
+<p>Always check the Graph response for:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">@odata.nextLink</span></span></code></pre></div></div>
+<hr>
+
+<h2 class="relative group">Assuming <code>$top</code> disables pagination
+    <div id="assuming-top-disables-pagination" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#assuming-top-disables-pagination" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>It does not.</p>
+<p>Even when <code>$top</code> is specified, continue checking for <code>@odata.nextLink</code>.</p>
+<hr>
+
+<h2 class="relative group">Creating paging tokens manually
+    <div id="creating-paging-tokens-manually" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#creating-paging-tokens-manually" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Avoid trying to manipulate <code>$skiptoken</code> values.</p>
+<p>Use the complete URL Graph provides.</p>
+<hr>
+
+<h2 class="relative group">Collecting thousands of records unnecessarily
+    <div id="collecting-thousands-of-records-unnecessarily" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#collecting-thousands-of-records-unnecessarily" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>If each user can be processed independently, processing page-by-page is usually cleaner than building a massive array first.</p>
+<hr>
+
+<h2 class="relative group">Forgetting about throttling
+    <div id="forgetting-about-throttling" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#forgetting-about-throttling" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>A flow that works against 50 test accounts may behave very differently against several thousand production accounts.</p>
+<p>Pagination, API request volume and retry behaviour should be considered together.</p>
+<hr>
+
+<h1 class="relative group">Example: retrieving all enabled users
+    <div id="example-retrieving-all-enabled-users" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#example-retrieving-all-enabled-users" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>As an example, the initial query could be:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="err">https://graph.microsoft.com/v1.0/users?$select=id,displayName,userPrincipalName,accountEnabled</span></span></span></code></pre></div></div>
+<p>The flow starts with:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">varGraphUrl =
+</span></span><span class="line"><span class="cl">https://graph.microsoft.com/v1.0/users?$select=id,displayName,userPrincipalName,accountEnabled</span></span></code></pre></div></div>
+<p>Inside the loop:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">HTTP GET → variables(&#39;varGraphUrl&#39;)</span></span></code></pre></div></div>
+<p>Process:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">body(&#39;HTTP&#39;)?[&#39;value&#39;]</span></span></code></pre></div></div>
+<p>Then update the URL:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">coalesce(
+</span></span><span class="line"><span class="cl">    body(&#39;HTTP&#39;)?[&#39;@odata.nextLink&#39;],
+</span></span><span class="line"><span class="cl">    &#39;&#39;
+</span></span><span class="line"><span class="cl">)</span></span></code></pre></div></div>
+<p>The cycle continues:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Request page 1
+</span></span><span class="line"><span class="cl">       ↓
+</span></span><span class="line"><span class="cl">Process records
+</span></span><span class="line"><span class="cl">       ↓
+</span></span><span class="line"><span class="cl">@odata.nextLink exists
+</span></span><span class="line"><span class="cl">       ↓
+</span></span><span class="line"><span class="cl">Request page 2
+</span></span><span class="line"><span class="cl">       ↓
+</span></span><span class="line"><span class="cl">Process records
+</span></span><span class="line"><span class="cl">       ↓
+</span></span><span class="line"><span class="cl">@odata.nextLink exists
+</span></span><span class="line"><span class="cl">       ↓
+</span></span><span class="line"><span class="cl">Request page 3
+</span></span><span class="line"><span class="cl">       ↓
+</span></span><span class="line"><span class="cl">Process records
+</span></span><span class="line"><span class="cl">       ↓
+</span></span><span class="line"><span class="cl">No @odata.nextLink
+</span></span><span class="line"><span class="cl">       ↓
+</span></span><span class="line"><span class="cl">Flow continues</span></span></code></pre></div></div>
+<p>This pattern can be reused for many Microsoft Graph collection endpoints.</p>
+<hr>
+
+<h1 class="relative group">A useful troubleshooting technique
+    <div id="a-useful-troubleshooting-technique" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#a-useful-troubleshooting-technique" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>When building the flow, I normally inspect the raw response from the HTTP action before adding the full pagination logic.</p>
+<p>I look specifically for:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;value&#34;</span><span class="err">:</span> <span class="p">[</span><span class="err">...</span><span class="p">]</span></span></span></code></pre></div></div>
+<p>and:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;@odata.nextLink&#34;</span><span class="err">:</span> <span class="s2">&#34;...&#34;</span></span></span></code></pre></div></div>
+<p>If <code>@odata.nextLink</code> is present, I know immediately that the current response is not the complete dataset.</p>
+<p>This is also useful when troubleshooting an existing automation which appears to be missing records.</p>
+<hr>
+
+<h1 class="relative group">Final design
+    <div id="final-design" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#final-design" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>The core pagination logic is surprisingly small:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">1. Store the initial Graph URL.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2. Call Graph.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">3. Process:
+</span></span><span class="line"><span class="cl">   body(&#39;HTTP&#39;)?[&#39;value&#39;]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">4. Store:
+</span></span><span class="line"><span class="cl">   coalesce(
+</span></span><span class="line"><span class="cl">       body(&#39;HTTP&#39;)?[&#39;@odata.nextLink&#39;],
+</span></span><span class="line"><span class="cl">       &#39;&#39;
+</span></span><span class="line"><span class="cl">   )
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">5. Repeat until the URL is empty.</span></span></code></pre></div></div>
+<p>The important part is not the complexity of the solution, but recognising that pagination needs to be handled in the first place.</p>
+<p>For small test datasets, ignoring pagination may appear to work perfectly. In larger Microsoft 365 environments, however, correctly following <code>@odata.nextLink</code> is essential if an automation needs to reliably process the complete dataset.</p>
+<hr>
+
+<h2 class="relative group">Key takeaway
+    <div id="key-takeaway" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#key-takeaway" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Whenever I build a Power Automate flow that retrieves a collection from Microsoft Graph, one of the first things I check is:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Does this response contain @odata.nextLink?</span></span></code></pre></div></div>
+<p>If it does, I treat pagination as part of the API integration rather than an optional enhancement.</p>
+<p>That small design decision prevents an automation from silently processing only part of the environment.</p>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+
+
+      
+
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2026
+          Rafal Reed
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+      </p>
+    
+  </div>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Search"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          aria-label="Search"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+    
+    
+  </body>
+  
+</html>
