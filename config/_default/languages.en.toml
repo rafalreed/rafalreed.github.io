@@ -14,7 +14,7 @@ title = "Rafal Reed"
   # description = "My awesome website"
   # copyright = "Copy, _right?_ :thinking_face:"
 
-# [params.author]
+[params.author]
 name = "Rafal Reed"
 email = "rafal.reed@hotmail.com"
 #   image = "img/blowfish_logo.png"
@@ -22,7 +22,7 @@ email = "rafal.reed@hotmail.com"
 headline = "Power Platform & Microsoft 365 Engineer"
 bio = "Building governed automation, applications and Microsoft 365 solutions that solve real operational problems."
 links = [
-      { email = "mailto:rafal.reed@hotmail.com" },
+#     { email = "mailto:rafal.reed@hotmail.com" },
 #     { link = "https://link-to-some-website.com/" },
 #     { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
 #     { apple = "https://www.apple.com" },

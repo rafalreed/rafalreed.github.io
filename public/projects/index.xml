@@ -6,8 +6,20 @@
     <description>Recent content in Projects on Rafal Reed</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>© 2026 </copyright>
-    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>rafal.reed@hotmail.com (Rafal Reed)</managingEditor>
+    <webMaster>rafal.reed@hotmail.com (Rafal Reed)</webMaster>
+    <copyright>© 2026 Rafal Reed</copyright>
+    <lastBuildDate>Mon, 21 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Teams Telephony Self-Service Automation</title>
+      <link>http://localhost:1313/projects/teams-telephony-automation/</link>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/projects/teams-telephony-automation/</guid>
+      <description>Replacing an administrator-dependent Teams telephony process with a secure self-service solution built with Power Apps, Power Automate and Azure Automation.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/teams-telephony-automation/feature.png" />
+    </item>
     
   </channel>
 </rss>
