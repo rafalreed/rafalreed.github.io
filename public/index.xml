@@ -9,7 +9,37 @@
     <managingEditor>rafal.reed@hotmail.com (Rafal Reed)</managingEditor>
     <webMaster>rafal.reed@hotmail.com (Rafal Reed)</webMaster>
     <copyright>© 2026 Rafal Reed</copyright>
-    <lastBuildDate>Mon, 21 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Returning Data from Office Scripts to Power Automate and Power Apps</title>
+      <link>http://localhost:1313/guides/returning-data-from-office-script-to-pa/</link>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/guides/returning-data-from-office-script-to-pa/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Understanding Entra Sign-In Dates</title>
+      <link>http://localhost:1313/guides/understanding-entra-sigin-dates/</link>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/guides/understanding-entra-sigin-dates/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>When to Use Office Scripts Instead of Power Automate Expressions</title>
+      <link>http://localhost:1313/guides/when-use-office-scripts-instead-pa/</link>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/guides/when-use-office-scripts-instead-pa/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>About</title>

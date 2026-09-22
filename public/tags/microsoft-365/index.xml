@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Guides on Rafal Reed</title>
-    <link>http://localhost:1313/guides/</link>
-    <description>Recent content in Guides on Rafal Reed</description>
+    <title>Microsoft 365 on Rafal Reed</title>
+    <link>http://localhost:1313/tags/microsoft-365/</link>
+    <description>Recent content in Microsoft 365 on Rafal Reed</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>rafal.reed@hotmail.com (Rafal Reed)</managingEditor>
     <webMaster>rafal.reed@hotmail.com (Rafal Reed)</webMaster>
     <copyright>© 2026 Rafal Reed</copyright>
-    <lastBuildDate>Tue, 22 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/guides/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/microsoft-365/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Returning Data from Office Scripts to Power Automate and Power Apps</title>
@@ -37,26 +37,6 @@
       <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
       <author>rafal.reed@hotmail.com (Rafal Reed)</author>
       <guid>http://localhost:1313/guides/when-use-office-scripts-instead-pa/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Fixing Teams Adaptive Card Payload Limit Errors in Power Automate</title>
-      <link>http://localhost:1313/guides/fixing-adaptive-card-payload-limit/</link>
-      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
-      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
-      <guid>http://localhost:1313/guides/fixing-adaptive-card-payload-limit/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Handling Pagination When Calling Microsoft Graph from Power Automate</title>
-      <link>http://localhost:1313/guides/handling-pagination-graph-powerautomate/</link>
-      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
-      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
-      <guid>http://localhost:1313/guides/handling-pagination-graph-powerautomate/</guid>
       <description></description>
       
     </item>
