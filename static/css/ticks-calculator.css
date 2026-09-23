@@ -1,0 +1,328 @@
+.ticks-tool {
+  --ticks-border: rgba(127, 127, 127, 0.24);
+  --ticks-soft: rgba(127, 127, 127, 0.08);
+  --ticks-soft-strong: rgba(127, 127, 127, 0.13);
+  --ticks-accent: #2563eb;
+  --ticks-accent-soft: rgba(37, 99, 235, 0.10);
+  --ticks-success: #15803d;
+
+  margin: 2rem 0;
+  padding: 1.4rem;
+  border: 1px solid var(--ticks-border);
+  border-radius: 1rem;
+  background: var(--ticks-soft);
+}
+
+.dark .ticks-tool {
+  --ticks-accent: #60a5fa;
+  --ticks-accent-soft: rgba(96, 165, 250, 0.14);
+  --ticks-success: #4ade80;
+}
+
+.ticks-tool * {
+  box-sizing: border-box;
+}
+
+.ticks-tool__header {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.ticks-tool__eyebrow {
+  margin: 0 0 0.2rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.68;
+}
+
+.ticks-tool__title {
+  margin: 0;
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+}
+
+.ticks-tool__intro {
+  max-width: 44rem;
+  margin: 0.45rem 0 0;
+  opacity: 0.78;
+}
+
+.ticks-tool__badge {
+  flex: 0 0 auto;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--ticks-border);
+  border-radius: 999px;
+  background: var(--ticks-accent-soft);
+  font-size: 0.8rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.ticks-tool__tabs {
+  display: inline-flex;
+  gap: 0.3rem;
+  padding: 0.3rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--ticks-border);
+  border-radius: 0.75rem;
+  background: var(--ticks-soft);
+}
+
+.ticks-tool__tab {
+  min-height: 2.5rem;
+  padding: 0.5rem 0.8rem;
+  border: 0;
+  border-radius: 0.55rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.ticks-tool__tab.is-active {
+  background: var(--ticks-accent);
+  color: white;
+}
+
+.dark .ticks-tool__tab.is-active {
+  color: #0b1220;
+}
+
+.ticks-tool__panel {
+  min-width: 0;
+}
+
+.ticks-tool__input-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(10rem, 0.6fr);
+  gap: 1rem;
+}
+
+.ticks-tool__field label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.ticks-tool__field input,
+.ticks-tool__field select {
+  width: 100%;
+  min-height: 2.8rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--ticks-border);
+  border-radius: 0.65rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 1rem;
+}
+
+.ticks-tool__field input:focus,
+.ticks-tool__field select:focus,
+.ticks-tool button:focus-visible {
+  outline: 2px solid var(--ticks-accent);
+  outline-offset: 2px;
+}
+
+.ticks-tool__hint {
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+  opacity: 0.65;
+}
+
+.ticks-tool__presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.ticks-tool__preset-label {
+  margin-right: 0.2rem;
+  font-size: 0.82rem;
+  font-weight: 650;
+  opacity: 0.7;
+}
+
+.ticks-tool__presets button,
+.ticks-tool__copy {
+  min-height: 2.35rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--ticks-border);
+  border-radius: 0.6rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.ticks-tool__presets button:hover,
+.ticks-tool__copy:hover {
+  background: var(--ticks-soft-strong);
+}
+
+.ticks-tool__result-card {
+  padding: 1.1rem;
+  border: 1px solid var(--ticks-border);
+  border-radius: 0.9rem;
+  background: var(--ticks-accent-soft);
+}
+
+.ticks-tool__result-label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+.ticks-tool__result-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.ticks-tool__result {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: clamp(1.35rem, 5vw, 2rem);
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.ticks-tool__calculation {
+  margin: 0.55rem 0 0;
+  font-size: 0.88rem;
+  opacity: 0.72;
+}
+
+.ticks-tool__expression {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.9rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--ticks-border);
+  border-radius: 0.8rem;
+}
+
+.ticks-tool__expression > div {
+  min-width: 0;
+}
+
+.ticks-tool__expression code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  font-size: 0.9rem;
+}
+
+.ticks-tool__reverse-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.ticks-tool__reverse-grid > div {
+  min-width: 0;
+  padding: 0.85rem;
+  border: 1px solid var(--ticks-border);
+  border-radius: 0.75rem;
+  background: var(--ticks-soft);
+}
+
+.ticks-tool__reverse-grid span {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.76rem;
+  opacity: 0.65;
+}
+
+.ticks-tool__reverse-grid strong {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+}
+
+.ticks-tool__message {
+  min-height: 1.3em;
+  margin: 0.8rem 0 0;
+  font-size: 0.84rem;
+  font-weight: 650;
+}
+
+.ticks-tool__message.is-success {
+  color: var(--ticks-success);
+}
+
+.ticks-tool__message.is-error {
+  color: #b91c1c;
+}
+
+.dark .ticks-tool__message.is-error {
+  color: #fca5a5;
+}
+
+.ticks-tool__noscript {
+  margin-top: 1rem;
+}
+
+@media (max-width: 720px) {
+  .ticks-tool {
+    padding: 1rem;
+  }
+
+  .ticks-tool__header,
+  .ticks-tool__result-row,
+  .ticks-tool__expression {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .ticks-tool__badge {
+    align-self: flex-start;
+    white-space: normal;
+  }
+
+  .ticks-tool__input-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ticks-tool__reverse-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ticks-tool__copy {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .ticks-tool__tabs {
+    display: flex;
+    width: 100%;
+  }
+
+  .ticks-tool__tab {
+    flex: 1 1 0;
+  }
+
+  .ticks-tool__reverse-grid {
+    grid-template-columns: 1fr;
+  }
+}

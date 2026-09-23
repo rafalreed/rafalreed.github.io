@@ -1,0 +1,137 @@
+<link rel="stylesheet" href="{{ "css/ticks-calculator.css" | relURL }}">
+
+<div class="ticks-tool" data-ticks-calculator>
+  <div class="ticks-tool__header">
+    <div>
+      <p class="ticks-tool__eyebrow">Interactive tool</p>
+      <h2 class="ticks-tool__title">Ticks Calculator</h2>
+      <p class="ticks-tool__intro">
+        Convert practical time values into .NET ticks, or convert an existing tick value back into readable time.
+      </p>
+    </div>
+    <div class="ticks-tool__badge" aria-label="Conversion constant">
+      1 second = 10,000,000 ticks
+    </div>
+  </div>
+
+  <div class="ticks-tool__tabs" role="tablist" aria-label="Calculator mode">
+    <button class="ticks-tool__tab is-active"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            data-mode-button="toTicks">
+      Time → Ticks
+    </button>
+    <button class="ticks-tool__tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            data-mode-button="fromTicks">
+      Ticks → Time
+    </button>
+  </div>
+
+  <div class="ticks-tool__panel" data-panel="toTicks">
+    <div class="ticks-tool__input-grid">
+      <div class="ticks-tool__field">
+        <label for="ticks-value">Value</label>
+        <input id="ticks-value"
+               data-time-value
+               type="number"
+               min="0"
+               step="any"
+               inputmode="decimal"
+               value="1">
+      </div>
+
+      <div class="ticks-tool__field">
+        <label for="ticks-unit">Unit</label>
+        <select id="ticks-unit" data-time-unit>
+          <option value="second">Seconds</option>
+          <option value="minute">Minutes</option>
+          <option value="hour" selected>Hours</option>
+          <option value="day">Days</option>
+          <option value="week">Weeks</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="ticks-tool__presets" aria-label="Preset durations">
+      <span class="ticks-tool__preset-label">Quick presets</span>
+      <button type="button" data-preset-value="1" data-preset-unit="hour">1 hour</button>
+      <button type="button" data-preset-value="8" data-preset-unit="hour">8 hours</button>
+      <button type="button" data-preset-value="1" data-preset-unit="day">1 day</button>
+      <button type="button" data-preset-value="7" data-preset-unit="day">7 days</button>
+      <button type="button" data-preset-value="30" data-preset-unit="day">30 days</button>
+      <button type="button" data-preset-value="90" data-preset-unit="day">90 days</button>
+    </div>
+
+    <div class="ticks-tool__result-card" aria-live="polite">
+      <span class="ticks-tool__result-label">Tick value</span>
+      <div class="ticks-tool__result-row">
+        <output class="ticks-tool__result" data-ticks-result>36,000,000,000</output>
+        <button class="ticks-tool__copy" type="button" data-copy="ticks">
+          Copy ticks
+        </button>
+      </div>
+      <p class="ticks-tool__calculation" data-calculation></p>
+    </div>
+
+    <div class="ticks-tool__expression">
+      <div>
+        <span class="ticks-tool__result-label">Power Automate expression</span>
+        <code data-expression>addTicks(utcNow(), 36000000000)</code>
+      </div>
+      <button class="ticks-tool__copy" type="button" data-copy="expression">
+        Copy expression
+      </button>
+    </div>
+  </div>
+
+  <div class="ticks-tool__panel" data-panel="fromTicks" hidden>
+    <div class="ticks-tool__field">
+      <label for="ticks-reverse-value">Tick value</label>
+      <input id="ticks-reverse-value"
+             data-reverse-value
+             type="text"
+             inputmode="numeric"
+             autocomplete="off"
+             value="864000000000"
+             placeholder="e.g. 864000000000">
+      <p class="ticks-tool__hint">Commas and spaces are accepted.</p>
+    </div>
+
+    <div class="ticks-tool__reverse-grid" aria-live="polite">
+      <div>
+        <span>Seconds</span>
+        <strong data-reverse-seconds>86,400</strong>
+      </div>
+      <div>
+        <span>Minutes</span>
+        <strong data-reverse-minutes>1,440</strong>
+      </div>
+      <div>
+        <span>Hours</span>
+        <strong data-reverse-hours>24</strong>
+      </div>
+      <div>
+        <span>Days</span>
+        <strong data-reverse-days>1</strong>
+      </div>
+      <div>
+        <span>Weeks</span>
+        <strong data-reverse-weeks>0.142857</strong>
+      </div>
+    </div>
+  </div>
+
+  <p class="ticks-tool__message" data-message role="status" aria-live="polite"></p>
+
+  <noscript>
+    <p class="ticks-tool__noscript">
+      JavaScript is required for the interactive calculator.
+    </p>
+  </noscript>
+</div>
+
+<script src="{{ "js/ticks-calculator.js" | relURL }}" defer></script>

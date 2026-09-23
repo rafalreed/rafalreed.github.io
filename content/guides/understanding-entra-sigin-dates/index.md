@@ -13,8 +13,6 @@ tags:
 
 ---
 
-# Understanding Entra Sign-In Dates
-
 When investigating inactive accounts in Microsoft Entra ID, one of the first questions is usually:
 
 **When did this user last sign in?**

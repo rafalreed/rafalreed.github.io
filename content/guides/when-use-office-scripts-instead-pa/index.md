@@ -13,7 +13,6 @@ tags:
 - Automation
 
 ---
-# When to Use Office Scripts Instead of Power Automate Expressions
 
 Power Automate expressions are incredibly useful. A quick `if()`, `concat()` or `formatDateTime()` can often save you from adding several extra actions to a flow.
 

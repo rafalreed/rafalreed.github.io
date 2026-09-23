@@ -21,15 +21,20 @@
   weight = 20
 
 [[main]]
+   name = "Tools"
+   pageRef = "tools"
+   weight = 30
+
+[[main]]
   name = "About"
   pageRef = "about"
-  weight = 30
+  weight = 40
 
 [[main]]
   identifier = "github"
   pre = "github"
   url = "https://github.com/rafalreed"
-  weight = 40
+  weight = 50
 
 #[[main]]
 #  name = "Parent"

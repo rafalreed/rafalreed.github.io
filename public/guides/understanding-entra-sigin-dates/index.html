@@ -262,7 +262,7 @@
     "keywords": ["Microsoft Entra ID","Microsoft Graph","Identity","Power Automate","Microsoft 365"],
     
     "mainEntityOfPage": "http://localhost:1313/guides/understanding-entra-sigin-dates/",
-    "wordCount":  1680 
+    "wordCount":  1675 
   }]
   </script>
 
@@ -353,6 +353,24 @@
       
         <span class="text-sm font-medium break-normal">
           Guides
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/tools/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="Tools"
+      title="Tools">
+      
+      
+        <span class="text-sm font-medium break-normal">
+          Tools
         </span>
       
     </a>
@@ -562,6 +580,25 @@
     <div class="px-2">
       <div class="flex items-center gap-4">
         <a
+          href="/tools/"
+          aria-label="Tools"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+          <span title="Tools" class="text-2xl font-bold tracking-tight">
+            Tools
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
           href="/about/"
           aria-label="About"
           
@@ -698,7 +735,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2026-09-22T00:00:00&#43;00:00">22 September 2026</time><span class="px-2 text-primary-500">&middot;</span><span>1680 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">8 mins</span>
+      <time datetime="2026-09-22T00:00:00&#43;00:00">22 September 2026</time><span class="px-2 text-primary-500">&middot;</span><span>1675 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">8 mins</span>
     
 
     
@@ -803,17 +840,7 @@
         
 
         <div class="article-content max-w-prose mb-20">
-          
-<h1 class="relative group">Understanding Entra Sign-In Dates
-    <div id="understanding-entra-sign-in-dates" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#understanding-entra-sign-in-dates" aria-label="Anchor">#</a>
-    </span>
-    
-</h1>
-<p>When investigating inactive accounts in Microsoft Entra ID, one of the first questions is usually:</p>
+          <p>When investigating inactive accounts in Microsoft Entra ID, one of the first questions is usually:</p>
 <p><strong>When did this user last sign in?</strong></p>
 <p>Unfortunately, the answer is not always as simple as looking at a single date.</p>
 <p>Microsoft Entra records several different types of sign-in activity, and they represent different things. It is therefore possible to see a user with a <strong>Last interactive sign-in</strong> from February while Microsoft Graph reports their <strong>Last successful sign-in</strong> as November.</p>

@@ -22,6 +22,26 @@
     </item>
     
     <item>
+      <title>Date and Time</title>
+      <link>http://localhost:1313/tags/date-and-time/</link>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/tags/date-and-time/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Developer Tools</title>
+      <link>http://localhost:1313/tags/developer-tools/</link>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/tags/developer-tools/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Governance</title>
       <link>http://localhost:1313/tags/governance/</link>
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
@@ -47,6 +67,26 @@
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
       <author>rafal.reed@hotmail.com (Rafal Reed)</author>
       <guid>http://localhost:1313/tags/permissions/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Power Automate</title>
+      <link>http://localhost:1313/tags/power-automate/</link>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/tags/power-automate/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Power Platform</title>
+      <link>http://localhost:1313/tags/power-platform/</link>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/tags/power-platform/</guid>
       <description></description>
       
     </item>
@@ -157,26 +197,6 @@
       <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
       <author>rafal.reed@hotmail.com (Rafal Reed)</author>
       <guid>http://localhost:1313/tags/power-apps/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Power Automate</title>
-      <link>http://localhost:1313/tags/power-automate/</link>
-      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
-      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
-      <guid>http://localhost:1313/tags/power-automate/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Power Platform</title>
-      <link>http://localhost:1313/tags/power-platform/</link>
-      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
-      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
-      <guid>http://localhost:1313/tags/power-platform/</guid>
       <description></description>
       
     </item>
