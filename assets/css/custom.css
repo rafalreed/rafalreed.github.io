@@ -1,0 +1,125 @@
+/* Newsletter signup */
+
+.newsletter-signup {
+  max-width: 48rem;
+  margin: 3rem auto;
+  padding: 1.75rem;
+  border: 1px solid rgba(var(--color-neutral-300), 0.7);
+  border-radius: 1rem;
+  background: rgba(var(--color-neutral-100), 0.45);
+}
+
+.dark .newsletter-signup {
+  border-color: rgba(var(--color-neutral-700), 0.8);
+  background: rgba(var(--color-neutral-800), 0.35);
+}
+
+.newsletter-signup__content {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.newsletter-signup__eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgb(var(--color-primary-600));
+}
+
+.dark .newsletter-signup__eyebrow {
+  color: rgb(var(--color-primary-400));
+}
+
+.newsletter-signup h2 {
+  margin: 0 0 0.5rem;
+}
+
+.newsletter-signup__description {
+  margin-bottom: 1.25rem;
+}
+
+.newsletter-signup__label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.newsletter-signup__controls {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.newsletter-signup__input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgb(var(--color-neutral-300));
+  border-radius: 0.5rem;
+  background: transparent;
+  color: inherit;
+}
+
+.dark .newsletter-signup__input {
+  border-color: rgb(var(--color-neutral-600));
+}
+
+.newsletter-signup__input:focus {
+  outline: 2px solid rgb(var(--color-primary-500));
+  outline-offset: 2px;
+}
+
+.newsletter-signup__button {
+  padding: 0.7rem 1.15rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: rgb(var(--color-primary-600));
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.newsletter-signup__button:hover {
+  opacity: 0.9;
+}
+
+.newsletter-signup__button:active {
+  transform: translateY(1px);
+}
+
+.newsletter-signup__privacy {
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+.newsletter-signup__powered {
+  margin-top: 0.35rem;
+  margin-bottom: 0;
+  font-size: 0.7rem;
+  opacity: 0.55;
+}
+
+.newsletter-signup__powered a:hover {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .newsletter-signup {
+    padding: 1.25rem;
+  }
+
+  .newsletter-signup__controls {
+    flex-direction: column;
+  }
+
+  .newsletter-signup__button {
+    width: 100%;
+  }
+}

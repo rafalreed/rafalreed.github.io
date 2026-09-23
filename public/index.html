@@ -112,6 +112,8 @@
   
   
   
+    
+  
   
     
   
@@ -119,8 +121,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.163b1a537d7d19ec16c2ebb45902386b6e2b94c9b4b5f8c82958e5baed6fd863aed36a5f5bbf3c614a6e9025b13c5b7e03513e563e022249501dcadb5cbbd13c.css"
-    integrity="sha512-FjsaU319GewWwuu0WQI4a24rlMm0tfjIKVjluu1v2GOu02pfW788YUpukCWxPFt&#43;A1E&#43;Vj4CIklQHcrbXLvRPA==">
+    href="/css/main.bundle.min.95cd4b1af9730b460add71257023dcb8d9a715f69932525f83f51badcf1fbca2dfd2f848088df222fd57007ca4b6bba39a2feb83bd4000b19bfdb0de294b7bb7.css"
+    integrity="sha512-lc1LGvlzC0YK3XElcCPcuNmnFfaZMlJfg/Ubrc8fvKLf0vhICI3yIv1XAHyktrujmi/rg71AALGb/bDeKUt7tw==">
 
   
   
@@ -721,6 +723,166 @@
 <p>I specialise in building secure, governed solutions using <strong>Microsoft Power Platform and Microsoft 365</strong>, with a focus on automation, operational improvement and making complex processes easier for people to use.</p>
 <p>My work spans <strong>Power Apps, Power Automate, SharePoint, Microsoft Graph, Dataverse, Azure Automation and Copilot</strong>, bringing these technologies together to solve real business problems.</p>
 <p>This site is a collection of selected projects, technical approaches and things I&rsquo;ve learned along the way.</p>
+<section
+  id="newsletter"
+  class="newsletter-signup"
+  aria-labelledby="newsletter-heading"
+>
+
+  <div class="newsletter-signup__content">
+
+    <div id="newsletter-form-content">
+
+      <p class="newsletter-signup__eyebrow">
+        Weekly updates
+      </p>
+
+      <h2 id="newsletter-heading">
+        Stay up to date
+      </h2>
+
+      <p class="newsletter-signup__description">
+        A short weekly digest of new Microsoft 365, Power Platform and Azure
+        guides, project write-ups and automation notes.
+      </p>
+
+      <form
+        action="https://buttondown.com/api/emails/embed-subscribe/rafalreed"
+        method="post"
+        class="embeddable-buttondown-form newsletter-signup__form"
+      >
+
+        <label class="newsletter-signup__label" for="bd-email">
+          Email address
+        </label>
+
+        <div class="newsletter-signup__controls">
+
+          <input
+            type="email"
+            name="email"
+            id="bd-email"
+            class="newsletter-signup__input"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          />
+
+          <input
+            type="hidden"
+            value="1"
+            name="embed"
+          />
+
+          <button
+            type="submit"
+            class="newsletter-signup__button"
+          >
+            Subscribe
+          </button>
+
+        </div>
+
+      </form>
+
+      <p class="newsletter-signup__privacy">
+        One email per week at most. No spam. Unsubscribe anytime.
+      </p>
+
+      <p class="newsletter-signup__powered">
+        <a
+          href="https://buttondown.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Powered by Buttondown
+        </a>
+      </p>
+
+    </div>
+
+
+    <div
+      id="newsletter-pending"
+      class="newsletter-signup__status"
+      hidden
+    >
+
+      <p class="newsletter-signup__eyebrow">
+        Almost there
+      </p>
+
+      <h2>
+        Check your inbox
+      </h2>
+
+      <p>
+        I've sent you a confirmation email.
+        Click the confirmation link to finish subscribing to the weekly updates.
+      </p>
+
+      <p class="newsletter-signup__privacy">
+        Can't see it? Check your junk or spam folder.
+      </p>
+
+    </div>
+
+
+    <div
+      id="newsletter-confirmed"
+      class="newsletter-signup__status"
+      hidden
+    >
+
+      <p class="newsletter-signup__eyebrow">
+        You're in
+      </p>
+
+      <h2>
+        You're subscribed!
+      </h2>
+
+      <p>
+        Thanks for subscribing. You'll receive at most one weekly update
+        when I publish new guides or project write-ups.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+  const newsletterState = params.get("newsletter");
+
+  const form = document.getElementById("newsletter-form-content");
+  const pending = document.getElementById("newsletter-pending");
+  const confirmed = document.getElementById("newsletter-confirmed");
+
+  if (newsletterState === "pending") {
+    form.hidden = true;
+    pending.hidden = false;
+  }
+
+  if (newsletterState === "confirmed") {
+    form.hidden = true;
+    confirmed.hidden = false;
+  }
+  if (
+    newsletterState === "pending" ||
+    newsletterState === "confirmed"
+  ) {
+    window.history.replaceState(
+      {},
+      document.title,
+      window.location.pathname + "#newsletter"
+    );
+  }
+});
+</script>
 </section>
 </article>
 

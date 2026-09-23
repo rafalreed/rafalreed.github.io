@@ -1,0 +1,160 @@
+<section
+  id="newsletter"
+  class="newsletter-signup"
+  aria-labelledby="newsletter-heading"
+>
+
+  <div class="newsletter-signup__content">
+
+    <div id="newsletter-form-content">
+
+      <p class="newsletter-signup__eyebrow">
+        Weekly updates
+      </p>
+
+      <h2 id="newsletter-heading">
+        Stay up to date
+      </h2>
+
+      <p class="newsletter-signup__description">
+        A short weekly digest of new Microsoft 365, Power Platform and Azure
+        guides, project write-ups and automation notes.
+      </p>
+
+      <form
+        action="https://buttondown.com/api/emails/embed-subscribe/rafalreed"
+        method="post"
+        class="embeddable-buttondown-form newsletter-signup__form"
+      >
+
+        <label class="newsletter-signup__label" for="bd-email">
+          Email address
+        </label>
+
+        <div class="newsletter-signup__controls">
+
+          <input
+            type="email"
+            name="email"
+            id="bd-email"
+            class="newsletter-signup__input"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          />
+
+          <input
+            type="hidden"
+            value="1"
+            name="embed"
+          />
+
+          <button
+            type="submit"
+            class="newsletter-signup__button"
+          >
+            Subscribe
+          </button>
+
+        </div>
+
+      </form>
+
+      <p class="newsletter-signup__privacy">
+        One email per week at most. No spam. Unsubscribe anytime.
+      </p>
+
+      <p class="newsletter-signup__powered">
+        <a
+          href="https://buttondown.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Powered by Buttondown
+        </a>
+      </p>
+
+    </div>
+
+
+    <div
+      id="newsletter-pending"
+      class="newsletter-signup__status"
+      hidden
+    >
+
+      <p class="newsletter-signup__eyebrow">
+        Almost there
+      </p>
+
+      <h2>
+        Check your inbox
+      </h2>
+
+      <p>
+        I've sent you a confirmation email.
+        Click the confirmation link to finish subscribing to the weekly updates.
+      </p>
+
+      <p class="newsletter-signup__privacy">
+        Can't see it? Check your junk or spam folder.
+      </p>
+
+    </div>
+
+
+    <div
+      id="newsletter-confirmed"
+      class="newsletter-signup__status"
+      hidden
+    >
+
+      <p class="newsletter-signup__eyebrow">
+        You're in
+      </p>
+
+      <h2>
+        You're subscribed!
+      </h2>
+
+      <p>
+        Thanks for subscribing. You'll receive at most one weekly update
+        when I publish new guides or project write-ups.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+  const newsletterState = params.get("newsletter");
+
+  const form = document.getElementById("newsletter-form-content");
+  const pending = document.getElementById("newsletter-pending");
+  const confirmed = document.getElementById("newsletter-confirmed");
+
+  if (newsletterState === "pending") {
+    form.hidden = true;
+    pending.hidden = false;
+  }
+
+  if (newsletterState === "confirmed") {
+    form.hidden = true;
+    confirmed.hidden = false;
+  }
+  if (
+    newsletterState === "pending" ||
+    newsletterState === "confirmed"
+  ) {
+    window.history.replaceState(
+      {},
+      document.title,
+      window.location.pathname + "#newsletter"
+    );
+  }
+});
+</script>
