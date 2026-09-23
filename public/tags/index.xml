@@ -9,7 +9,87 @@
     <managingEditor>rafal.reed@hotmail.com (Rafal Reed)</managingEditor>
     <webMaster>rafal.reed@hotmail.com (Rafal Reed)</webMaster>
     <copyright>© 2026 Rafal Reed</copyright>
-    <lastBuildDate>Tue, 22 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Best Practices</title>
+      <link>http://localhost:1313/tags/best-practices/</link>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/tags/best-practices/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Governance</title>
+      <link>http://localhost:1313/tags/governance/</link>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/tags/governance/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Microsoft 365</title>
+      <link>http://localhost:1313/tags/microsoft-365/</link>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/tags/microsoft-365/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Permissions</title>
+      <link>http://localhost:1313/tags/permissions/</link>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/tags/permissions/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>http://localhost:1313/tags/security/</link>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/tags/security/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>SharePoint</title>
+      <link>http://localhost:1313/tags/sharepoint/</link>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/tags/sharepoint/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>SharePoint Online</title>
+      <link>http://localhost:1313/tags/sharepoint-online/</link>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/tags/sharepoint-online/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Site Architecture</title>
+      <link>http://localhost:1313/tags/site-architecture/</link>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+      <guid>http://localhost:1313/tags/site-architecture/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Automation</title>
@@ -37,16 +117,6 @@
       <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
       <author>rafal.reed@hotmail.com (Rafal Reed)</author>
       <guid>http://localhost:1313/tags/identity/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Microsoft 365</title>
-      <link>http://localhost:1313/tags/microsoft-365/</link>
-      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
-      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
-      <guid>http://localhost:1313/tags/microsoft-365/</guid>
       <description></description>
       
     </item>
@@ -177,16 +247,6 @@
       <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
       <author>rafal.reed@hotmail.com (Rafal Reed)</author>
       <guid>http://localhost:1313/tags/powershell/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>SharePoint</title>
-      <link>http://localhost:1313/tags/sharepoint/</link>
-      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
-      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
-      <guid>http://localhost:1313/tags/sharepoint/</guid>
       <description></description>
       
     </item>
