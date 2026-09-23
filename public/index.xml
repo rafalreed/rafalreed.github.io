@@ -1,135 +1,243 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on Rafal Reed</title>
+
+    <title>Rafal Reed - Latest Guides and Projects</title>
+
     <link>http://localhost:1313/</link>
-    <description>Recent content in Home on Rafal Reed</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <managingEditor>rafal.reed@hotmail.com (Rafal Reed)</managingEditor>
-    <webMaster>rafal.reed@hotmail.com (Rafal Reed)</webMaster>
-    <copyright>© 2026 Rafal Reed</copyright>
-    <lastBuildDate>Wed, 23 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    
+
+    <description>
+      Latest Microsoft 365, Power Platform, Azure guides and project write-ups from Rafal Reed.
+    </description>
+
+    <generator>Hugo</generator>
+
+    <language>en-gb</language>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>
+      Wed, 23 Sep 2026 00:00:00 +0000
+    </lastBuildDate>
+
     <item>
-      <title>How to Grant Access to One SharePoint Folder Without Granting Access to the Whole Library</title>
-      <link>http://localhost:1313/guides/grant-access-to-sp-folder-not-whole-library/</link>
-      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
-      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
-      <guid>http://localhost:1313/guides/grant-access-to-sp-folder-not-whole-library/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Power Automate Ticks Calculator</title>
-      <link>http://localhost:1313/tools/ticks-calculator/</link>
-      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
-      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
-      <guid>http://localhost:1313/tools/ticks-calculator/</guid>
-      <description>Convert practical time values to .NET ticks, reverse ticks back into readable time, and copy ready-to-use Power Automate expressions.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/tools/ticks-calculator/feature.png" />
-    </item>
-    
-    <item>
-      <title>SharePoint Site Types: Which One Should You Use?</title>
+
+      <title>
+        SharePoint Site Types: Which One Should You Use?
+      </title>
+
       <link>http://localhost:1313/guides/sharepoint-site-types-which-one-to-use/</link>
-      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
-      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+
       <guid>http://localhost:1313/guides/sharepoint-site-types-which-one-to-use/</guid>
-      <description></description>
-      
+
+      <pubDate>
+        Wed, 23 Sep 2026 00:00:00 +0000
+      </pubDate>
+
+      <description>
+        A quick guide to SharePoint Team, Communication, Hub, Channel and Home sites, including when to use each type, their advantages and disadvantages, and practical examples.
+      </description>
+
+      <category>guides</category>
+
     </item>
-    
+
     <item>
-      <title>Returning Data from Office Scripts to Power Automate and Power Apps</title>
-      <link>http://localhost:1313/guides/returning-data-from-office-script-to-pa/</link>
-      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
-      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
-      <guid>http://localhost:1313/guides/returning-data-from-office-script-to-pa/</guid>
-      <description></description>
-      
+
+      <title>
+        How to Grant Access to One SharePoint Folder Without Granting Access to the Whole Library
+      </title>
+
+      <link>http://localhost:1313/guides/grant-access-to-sp-folder-not-whole-library/</link>
+
+      <guid>http://localhost:1313/guides/grant-access-to-sp-folder-not-whole-library/</guid>
+
+      <pubDate>
+        Wed, 23 Sep 2026 00:00:00 +0000
+      </pubDate>
+
+      <description>
+        A practical guide to granting access to a single SharePoint folder without exposing the entire document library, including permission inheritance, security groups and common mistakes.
+      </description>
+
+      <category>guides</category>
+
     </item>
-    
+
     <item>
-      <title>Understanding Entra Sign-In Dates</title>
-      <link>http://localhost:1313/guides/understanding-entra-sigin-dates/</link>
-      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
-      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
-      <guid>http://localhost:1313/guides/understanding-entra-sigin-dates/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>When to Use Office Scripts Instead of Power Automate Expressions</title>
+
+      <title>
+        When to Use Office Scripts Instead of Power Automate Expressions
+      </title>
+
       <link>http://localhost:1313/guides/when-use-office-scripts-instead-pa/</link>
-      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
-      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+
       <guid>http://localhost:1313/guides/when-use-office-scripts-instead-pa/</guid>
-      <description></description>
-      
+
+      <pubDate>
+        Tue, 22 Sep 2026 00:00:00 +0000
+      </pubDate>
+
+      <description>
+        Learn when Power Automate expressions are enough and when Office Scripts are the better choice. This guide explains the difference with simple examples and practical rules for building cleaner, easier-to-maintain Excel automations.
+      </description>
+
+      <category>guides</category>
+
     </item>
-    
+
     <item>
-      <title>About</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
-      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
-      <guid>http://localhost:1313/about/</guid>
-      <description></description>
-      
+
+      <title>
+        Understanding Entra Sign-In Dates
+      </title>
+
+      <link>http://localhost:1313/guides/understanding-entra-sigin-dates/</link>
+
+      <guid>http://localhost:1313/guides/understanding-entra-sigin-dates/</guid>
+
+      <pubDate>
+        Tue, 22 Sep 2026 00:00:00 +0000
+      </pubDate>
+
+      <description>
+        A practical guide to Microsoft Entra ID sign-in timestamps, including interactive, non-interactive and successful sign-ins, and how to choose the correct value when identifying inactive accounts.
+      </description>
+
+      <category>guides</category>
+
     </item>
-    
+
     <item>
-      <title>Automated Inactive Account Lifecycle Management</title>
-      <link>http://localhost:1313/projects/inactive-account-lifecycle/</link>
-      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
-      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
-      <guid>http://localhost:1313/projects/inactive-account-lifecycle/</guid>
-      <description>Automating inactive-account governance using Microsoft Graph, Power Automate and structured lifecycle tracking.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/inactive-account-lifecycle/feature.png" />
+
+      <title>
+        Returning Data from Office Scripts to Power Automate and Power Apps
+      </title>
+
+      <link>http://localhost:1313/guides/returning-data-from-office-script-to-pa/</link>
+
+      <guid>http://localhost:1313/guides/returning-data-from-office-script-to-pa/</guid>
+
+      <pubDate>
+        Tue, 22 Sep 2026 00:00:00 +0000
+      </pubDate>
+
+      <description>
+        Learn how to return strings, numbers and structured results from Office Scripts, use them in Power Automate, and pass the response back to a Power App with practical examples.
+      </description>
+
+      <category>guides</category>
+
     </item>
-    
+
     <item>
-      <title>Fixing Teams Adaptive Card Payload Limit Errors in Power Automate</title>
-      <link>http://localhost:1313/guides/fixing-adaptive-card-payload-limit/</link>
-      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
-      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
-      <guid>http://localhost:1313/guides/fixing-adaptive-card-payload-limit/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Handling Pagination When Calling Microsoft Graph from Power Automate</title>
-      <link>http://localhost:1313/guides/handling-pagination-graph-powerautomate/</link>
-      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
-      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
-      <guid>http://localhost:1313/guides/handling-pagination-graph-powerautomate/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>SharePoint Usage Analytics &amp; Power BI</title>
-      <link>http://localhost:1313/projects/sharepoint-usage-analytics/</link>
-      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
-      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
-      <guid>http://localhost:1313/projects/sharepoint-usage-analytics/</guid>
-      <description>Building a historical SharePoint analytics platform using Microsoft Graph reporting, Power Automate, Dataverse and Power BI.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/sharepoint-usage-analytics/feature.png" />
-    </item>
-    
-    <item>
-      <title>Teams Telephony Self-Service Automation</title>
+
+      <title>
+        Teams Telephony Self-Service Automation
+      </title>
+
       <link>http://localhost:1313/projects/teams-telephony-automation/</link>
-      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
-      <author>rafal.reed@hotmail.com (Rafal Reed)</author>
+
       <guid>http://localhost:1313/projects/teams-telephony-automation/</guid>
-      <description>Replacing an administrator-dependent Teams telephony process with a secure self-service solution built with Power Apps, Power Automate and Azure Automation.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/teams-telephony-automation/feature.png" />
+
+      <pubDate>
+        Mon, 21 Sep 2026 00:00:00 +0000
+      </pubDate>
+
+      <description>
+        A self-service Power Platform solution enabling authorised users to manage Microsoft Teams telephony routing without requiring direct administrative access.
+      </description>
+
+      <category>projects</category>
+
     </item>
-    
+
+    <item>
+
+      <title>
+        SharePoint Usage Analytics &amp; Power BI
+      </title>
+
+      <link>http://localhost:1313/projects/sharepoint-usage-analytics/</link>
+
+      <guid>http://localhost:1313/projects/sharepoint-usage-analytics/</guid>
+
+      <pubDate>
+        Mon, 21 Sep 2026 00:00:00 +0000
+      </pubDate>
+
+      <description>
+        A reporting pipeline that captures historical SharePoint usage data and transforms it into management analytics in Power BI.
+      </description>
+
+      <category>projects</category>
+
+    </item>
+
+    <item>
+
+      <title>
+        Handling Pagination When Calling Microsoft Graph from Power Automate
+      </title>
+
+      <link>http://localhost:1313/guides/handling-pagination-graph-powerautomate/</link>
+
+      <guid>http://localhost:1313/guides/handling-pagination-graph-powerautomate/</guid>
+
+      <pubDate>
+        Mon, 21 Sep 2026 00:00:00 +0000
+      </pubDate>
+
+      <description>
+        A practical guide to handling Microsoft Graph pagination and @odata.nextLink reliably in Power Automate.
+      </description>
+
+      <category>guides</category>
+
+    </item>
+
+    <item>
+
+      <title>
+        Fixing Teams Adaptive Card Payload Limit Errors in Power Automate
+      </title>
+
+      <link>http://localhost:1313/guides/fixing-adaptive-card-payload-limit/</link>
+
+      <guid>http://localhost:1313/guides/fixing-adaptive-card-payload-limit/</guid>
+
+      <pubDate>
+        Mon, 21 Sep 2026 00:00:00 +0000
+      </pubDate>
+
+      <description>
+        A practical guide to troubleshooting and resolving Microsoft Teams Adaptive Card payload limit errors in Power Automate, including ways to reduce card size and design more reliable notifications.
+      </description>
+
+      <category>guides</category>
+
+    </item>
+
+    <item>
+
+      <title>
+        Automated Inactive Account Lifecycle Management
+      </title>
+
+      <link>http://localhost:1313/projects/inactive-account-lifecycle/</link>
+
+      <guid>http://localhost:1313/projects/inactive-account-lifecycle/</guid>
+
+      <pubDate>
+        Mon, 21 Sep 2026 00:00:00 +0000
+      </pubDate>
+
+      <description>
+        An automated Microsoft Entra ID lifecycle process for identifying inactive accounts, managing staged warnings and safely progressing accounts towards removal.
+      </description>
+
+      <category>projects</category>
+
+    </item>
+
   </channel>
 </rss>

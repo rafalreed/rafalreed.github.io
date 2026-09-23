@@ -2,6 +2,7 @@
 
 title: "Fixing Teams Adaptive Card Payload Limit Errors in Power Automate"
 date: 2026-09-21
+description: "A practical guide to troubleshooting and resolving Microsoft Teams Adaptive Card payload limit errors in Power Automate, including ways to reduce card size and design more reliable notifications."
 tags:
 
 - Power Automate

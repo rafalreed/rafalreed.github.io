@@ -2,6 +2,7 @@
 
 title: "Handling Pagination When Calling Microsoft Graph from Power Automate"
 date: 2026-09-21
+description: "A practical guide to handling Microsoft Graph pagination and @odata.nextLink reliably in Power Automate."
 tags:
 
 - Microsoft Graph

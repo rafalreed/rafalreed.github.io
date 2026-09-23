@@ -1,0 +1,64 @@
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+
+{{- $sections := slice "guides" "projects" }}
+{{- $pages := where site.RegularPages "Section" "in" $sections }}
+{{- $pages = $pages.ByDate.Reverse }}
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+
+    <title>{{ site.Title }} - Latest Guides and Projects</title>
+
+    <link>{{ site.BaseURL }}</link>
+
+    <description>
+      Latest Microsoft 365, Power Platform, Azure guides and project write-ups from {{ site.Title }}.
+    </description>
+
+    <generator>Hugo</generator>
+
+    <language>en-gb</language>
+
+    {{- with .OutputFormats.Get "RSS" }}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{- end }}
+
+    {{- with index $pages 0 }}
+    <lastBuildDate>
+      {{ .Lastmod.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}
+    </lastBuildDate>
+    {{- end }}
+
+    {{- range $pages }}
+
+    {{- $description := .Description }}
+    {{- if not $description }}
+      {{- $description = .Plain | truncate 240 }}
+    {{- end }}
+
+    <item>
+
+      <title>
+        {{ .Title | transform.XMLEscape | safeHTML }}
+      </title>
+
+      <link>{{ .Permalink }}</link>
+
+      <guid>{{ .Permalink }}</guid>
+
+      <pubDate>
+        {{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}
+      </pubDate>
+
+      <description>
+        {{ $description | transform.XMLEscape | safeHTML }}
+      </description>
+
+      <category>{{ .Section }}</category>
+
+    </item>
+
+    {{- end }}
+
+  </channel>
+</rss>
