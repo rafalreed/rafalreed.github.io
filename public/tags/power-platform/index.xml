@@ -17,8 +17,8 @@
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
       <author>rafal.reed@hotmail.com (Rafal Reed)</author>
       <guid>http://localhost:1313/tools/ticks-calculator/</guid>
-      <description></description>
-      
+      <description>Convert practical time values to .NET ticks, reverse ticks back into readable time, and copy ready-to-use Power Automate expressions.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/tools/ticks-calculator/feature.png" />
     </item>
     
     <item>

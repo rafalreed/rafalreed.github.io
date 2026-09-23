@@ -2,11 +2,17 @@
 title: "Power Automate Ticks Calculator"
 date: 2026-09-23
 description: "Convert seconds, minutes, hours, days and weeks into .NET tick values for Power Automate, or convert ticks back into readable time."
+summary: "Convert practical time values to .NET ticks, reverse ticks back into readable time, and copy ready-to-use Power Automate expressions."
 tags:
   - Power Automate
   - Power Platform
   - Developer Tools
   - Date and Time
+showDate: false
+showReadingTime: false
+showWordCount: false
+showAuthor: false
+showPagination: false
 ---
 
 Power Automate occasionally requires time values to be expressed as **ticks** rather than familiar units such as hours or days.
